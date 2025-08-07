@@ -1,0 +1,142 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class InputManager : Singleton<InputManager>
+{
+    public Vector2 MoveInput { get; private set; }
+    public Vector2 LookInput { get; private set; }
+    public bool JumpInput { get; private set; }
+    public bool FireInput { get; private set; }
+    public bool DashInput { get; private set; }
+    public bool InteractInput { get; private set; }
+    public bool InventoryInput { get; private set; }
+    public bool OptionInput { get; private set; }
+    public bool DropInput { get; private set; }
+    public bool ExploreInput { get; private set; }
+
+    public bool IsMoving => MoveInput.sqrMagnitude > 0.01f;
+
+    public void OnMove(InputAction.CallbackContext callback)
+    {
+        if (callback.performed)
+        {
+            MoveInput = callback.ReadValue<Vector2>();
+        }
+        else if (callback.canceled)
+        {
+            MoveInput = Vector2.zero;
+        }
+    }
+
+    public void OnLook(InputAction.CallbackContext callback)
+    {
+        if (callback.performed)
+        {
+            LookInput = callback.ReadValue<Vector2>();
+        }
+        else if (callback.canceled)
+        {
+            LookInput = Vector2.zero;
+        }
+    }
+
+    public void OnJump(InputAction.CallbackContext callback)
+    {
+        if (callback.performed)
+        {
+            JumpInput = true;
+        }
+        else if (callback.canceled)
+        {
+            JumpInput = false;
+        }
+    }
+
+    public void OnFire(InputAction.CallbackContext callback)
+    {
+        if (callback.performed)
+        {
+            FireInput = true;
+        }
+        else if (callback.canceled)
+        {
+            FireInput = false;
+        }
+    }
+
+    public void OnDash(InputAction.CallbackContext callback)
+    {
+        if (callback.performed)
+        {
+            DashInput = true;
+        }
+        else if (callback.canceled)
+        {
+            DashInput = false;
+        }
+    }
+
+    public void OnInteract(InputAction.CallbackContext callback)
+    {
+        if (callback.performed)
+        {
+            InteractInput = true;
+        }
+        else if (callback.canceled)
+        {
+            InteractInput = false;
+        }
+    }
+
+    public void OnInventory(InputAction.CallbackContext callback)
+    {
+        if (callback.performed)
+        {
+            InventoryInput = true;
+        }
+        else if (callback.canceled)
+        {
+            InventoryInput = false;
+        }
+    }
+
+    public void OnOption(InputAction.CallbackContext callback)
+    {
+        if (callback.performed)
+        {
+            OptionInput = true;
+        }
+        else if (callback.canceled)
+        {
+            OptionInput = false;
+        }
+    }
+
+    public void OnDrop(InputAction.CallbackContext callback)
+    {
+        if (callback.performed)
+        {
+            DropInput = true;
+        }
+        else if (callback.canceled)
+        {
+            DropInput = false;
+        }
+    }
+
+    public void OnExplore(InputAction.CallbackContext callback)
+    {
+        if (callback.performed)
+        {
+            ExploreInput = true;
+        }
+        else if (callback.canceled)
+        {
+            ExploreInput = false;
+        }
+    }
+
+}
