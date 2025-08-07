@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using Constants;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,8 +10,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rigd;
 
     [Header("Move")]
-    [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float jumpForce = 5f;
     [SerializeField] private LayerMask groundLayerMask;
 
     private bool isGrounded = true;
@@ -19,18 +19,53 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private ThirdPersonCamera thirdPersonCamera;
 
     [Header("Dash")]
-    [SerializeField] private float dashDistance = 2f;
     [SerializeField] private float dashCooldown = 1f;
     private float lastDashTime = -1f;
 
+    [Header("Stats")]
+    [SerializeField] private Stat[] initStats;
+    public CharacterStats characterStats;
 
+    public int Health
+    {
+        get => (int)characterStats.GetStat(StatType.CurrentHP).FinalValue;
+    }
 
+    public int MaxHealth
+    {
+        get => (int)characterStats.GetStat(StatType.MaxHP).FinalValue;
+    }
+    public float MoveSpeed
+    {
+        get => characterStats.GetStat(StatType.MoveSpeed).FinalValue;
+        set => characterStats.GetStat(StatType.MoveSpeed).SetBaseValue(value);
+    }
+    public float JumpForce
+    {
+        get => characterStats.GetStat(StatType.JumpForce).FinalValue;
+        set => characterStats.GetStat(StatType.JumpForce).SetBaseValue(value);
+    }
+
+    public float DashDistance
+    {
+        get => characterStats.GetStat(StatType.DashDistance).FinalValue;
+        set => characterStats.GetStat(StatType.DashDistance).SetBaseValue(value);
+    }
+
+    private void Awake()
+    {
+        rigd = GetComponent<Rigidbody>();
+        Cursor.lockState = CursorLockMode.Locked; // 커서를 잠금 상태로 설정
+
+        // 캐릭터 스탯 초기화
+        characterStats = new();
+        foreach (var stat in initStats)
+            characterStats.AddStat(new(stat.Type, stat.BaseValue));
+    }
 
     private void Start()
     {
         input = InputManager.Instance;
-        rigd = GetComponent<Rigidbody>();
-        Cursor.lockState = CursorLockMode.Locked; // 커서를 잠금 상태로 설정
     }
 
     private void Update()
@@ -52,23 +87,18 @@ public class PlayerController : MonoBehaviour
         Look();
     }
 
-    public void HandleIdle()
-    {
-        Vector3 velocity = Vector3.zero;
-        velocity.y = rigd.velocity.y; // Y축 속도 유지
-        rigd.velocity = velocity;
-    }
-
     public void Move()
     {
         Vector2 moveInput = input.MoveInput;
         Vector3 moveDirection = new Vector3(moveInput.x, 0, moveInput.y).normalized;
         moveDirection = thirdPersonCamera.transform.TransformDirection(moveDirection); // 카메라 방향으로 이동
         moveDirection.y = 0; // Y축 방향 제거
-        Vector3 velocity = moveSpeed * moveDirection;
+        Vector3 velocity = MoveSpeed * moveDirection;
         velocity.y = rigd.velocity.y; // Y축 속도 유지
         rigd.velocity = velocity;
-        // transform.forward = moveDirection; // 캐릭터가 이동 방향을 바라보도록 설정
+
+        if(moveDirection == Vector3.zero) return;
+        transform.forward = moveDirection; // 캐릭터가 이동 방향을 바라보도록 설정
     }
 
     public void Dash()
@@ -79,14 +109,15 @@ public class PlayerController : MonoBehaviour
         dashDirection.y = 0; // Y축 방향 제거
         dashDirection.Normalize();
 
-        transform.position = transform.position + dashDirection * dashDistance; // 대시 거리만큼 이동
+
+        transform.position = transform.position + dashDirection * DashDistance; // 대시 거리만큼 이동
         lastDashTime = Time.time; // 대시 시간 갱신
     }
 
     public void Jump()
     {
         if (!isGrounded) return;
-        rigd.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        rigd.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
         isGrounded = false;
     }
 
