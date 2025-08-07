@@ -18,6 +18,11 @@ public class PlayerController : MonoBehaviour
     [Header("Look")]
     [SerializeField] private ThirdPersonCamera thirdPersonCamera;
 
+    [Header("Dash")]
+    [SerializeField] private float dashDistance = 2f;
+    [SerializeField] private float dashCooldown = 1f;
+    private float lastDashTime = -1f;
+
 
 
 
@@ -31,6 +36,10 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Move();
+        if(input.DashInput)
+        {
+            Dash();
+        }
 
         if(input.JumpInput)
         {
@@ -60,6 +69,18 @@ public class PlayerController : MonoBehaviour
         velocity.y = rigd.velocity.y; // Y축 속도 유지
         rigd.velocity = velocity;
         // transform.forward = moveDirection; // 캐릭터가 이동 방향을 바라보도록 설정
+    }
+
+    public void Dash()
+    {
+        if (Time.time < lastDashTime + dashCooldown) return; // 대시 쿨타임 확인
+
+        Vector3 dashDirection = thirdPersonCamera.transform.forward; // 카메라 방향으로 대시
+        dashDirection.y = 0; // Y축 방향 제거
+        dashDirection.Normalize();
+
+        transform.position = transform.position + dashDirection * dashDistance; // 대시 거리만큼 이동
+        lastDashTime = Time.time; // 대시 시간 갱신
     }
 
     public void Jump()

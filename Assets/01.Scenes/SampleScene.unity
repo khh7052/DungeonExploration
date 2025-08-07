@@ -277,7 +277,6 @@ MonoBehaviour:
   distance: 5
   xSpeed: 20
   ySpeed: 20
-  smoothTime: 0.2
   yMinLimit: 10
   yMaxLimit: 80
 --- !u!1 &410087039
@@ -485,6 +484,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   thirdPersonCamera: {fileID: 330585548}
+  dashDistance: 2
+  dashCooldown: 1
 --- !u!4 &674898186
 Transform:
   m_ObjectHideFlags: 0
@@ -562,7 +563,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: a3f11a10bd254fe43a919cf55d43e76a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -709,7 +710,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 3aa097b1c2268274eb31542e796d5f03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
