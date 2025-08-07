@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     private InputManager input;
     private Rigidbody rigd;
 
+    [Header("Move")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private LayerMask groundLayerMask;
@@ -14,11 +15,17 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded = true;
     private bool isJumping = false;
 
+    [Header("Look")]
+    [SerializeField] private ThirdPersonCamera thirdPersonCamera;
+
+
+
+
     private void Start()
     {
         input = InputManager.Instance;
         rigd = GetComponent<Rigidbody>();
-
+        Cursor.lockState = CursorLockMode.Locked; // 커서를 잠금 상태로 설정
     }
 
     private void Update()
@@ -29,6 +36,11 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
+    }
+
+    private void LateUpdate()
+    {
+        Look();
     }
 
     public void HandleIdle()
@@ -42,6 +54,8 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 moveInput = input.MoveInput;
         Vector3 moveDirection = new Vector3(moveInput.x, 0, moveInput.y).normalized;
+        moveDirection = thirdPersonCamera.transform.TransformDirection(moveDirection); // 카메라 방향으로 이동
+        moveDirection.y = 0; // Y축 방향 제거
         Vector3 velocity = moveSpeed * moveDirection;
         velocity.y = rigd.velocity.y; // Y축 속도 유지
         rigd.velocity = velocity;
@@ -53,6 +67,14 @@ public class PlayerController : MonoBehaviour
         if (!isGrounded) return;
         rigd.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         isGrounded = false;
+    }
+
+    public void Look()
+    {
+        float mouseX = input.LookInput.x;
+        float mouseY = input.LookInput.y;
+
+        thirdPersonCamera.Rotate(mouseX, mouseY);
     }
 
     private void OnCollisionEnter(Collision collision)

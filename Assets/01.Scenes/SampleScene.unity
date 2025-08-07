@@ -274,8 +274,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 674898186}
-  offset: {x: 0, y: 3, z: -4}
-  smoothSpeed: 0.125
+  distance: 5
+  xSpeed: 20
+  ySpeed: 20
+  smoothTime: 0.2
+  yMinLimit: 10
+  yMaxLimit: 80
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +425,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674898182}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -475,11 +479,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95b01bcd71a46b84584c2040142f171c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 10
   jumpForce: 10
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 256
+  thirdPersonCamera: {fileID: 330585548}
 --- !u!4 &674898186
 Transform:
   m_ObjectHideFlags: 0
@@ -597,7 +602,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
