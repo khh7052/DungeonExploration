@@ -18,6 +18,8 @@ public class Inventory : MonoBehaviour
     private void Awake()
     {
         itemSlots = new ItemSlot[inventorySize];
+        selectedSlotIndex = -1;
+
         for (int i = 0; i < inventorySize; i++)
         {
             ItemSlot slot = Instantiate(itemSlotPrefab, itemSlotParent);
@@ -73,7 +75,7 @@ public class Inventory : MonoBehaviour
     {
         if (newIndex < 0 || newIndex >= itemSlots.Length) return;
 
-        selectedSlotIndex = newIndex;
+        selectedSlotIndex = selectedSlotIndex != newIndex ? newIndex : -1;
 
         for (int i = 0; i < itemSlots.Length; i++)
             itemSlots[i].Select(i == selectedSlotIndex); // 선택된 슬롯에만 선택 표시
