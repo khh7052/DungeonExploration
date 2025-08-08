@@ -23,7 +23,8 @@ namespace Constants
         Defense,
         MoveSpeed,
         JumpForce,
-        DashDistance,
+        DashForce,
+        DashDuration
     }
     public enum ModifierType
     {

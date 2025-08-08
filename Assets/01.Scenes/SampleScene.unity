@@ -1168,7 +1168,10 @@ MonoBehaviour:
     baseValue: 15
     modifiers: []
   - type: 6
-    baseValue: 2
+    baseValue: 50
+    modifiers: []
+  - type: 7
+    baseValue: 0.1
     modifiers: []
   interactDistance: 10
   interactableLayerMask:

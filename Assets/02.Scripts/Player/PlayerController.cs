@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     [Header("Dash")]
     [SerializeField] private float dashCooldown = 1f;
     private float lastDashTime = -1f;
+    private bool isDashing = false;
 
     [Header("Stats")]
     [SerializeField] private Stat[] initStats;
@@ -60,10 +61,16 @@ public class PlayerController : MonoBehaviour
         set => characterStats.GetStat(StatType.JumpForce).SetBaseValue(value);
     }
 
-    public float DashDistance
+    public float DashForce
     {
-        get => characterStats.GetStat(StatType.DashDistance).FinalValue;
-        set => characterStats.GetStat(StatType.DashDistance).SetBaseValue(value);
+        get => characterStats.GetStat(StatType.DashForce).FinalValue;
+        set => characterStats.GetStat(StatType.DashForce).SetBaseValue(value);
+    }
+
+    public float DashDuration
+    {
+        get => characterStats.GetStat(StatType.DashDuration).FinalValue;
+        set => characterStats.GetStat(StatType.DashDuration).SetBaseValue(value);
     }
 
     private void Awake()
@@ -109,21 +116,29 @@ public class PlayerController : MonoBehaviour
         Look();
         UpdatePromptText();
     }
-
     public void Move()
     {
+        if (isDashing)
+        {
+            Vector3 v = rigd.velocity;
+            v.y = 0;
+            rigd.velocity = v; // 대시 중에는 대시 방향으로 속도 설정
+            return; // 대시 중이면 이동 차단
+        }
+
         Vector2 moveInput = input.MoveInput;
         moveDirection = new Vector3(moveInput.x, 0, moveInput.y).normalized;
-        moveDirection = thirdPersonCamera.transform.TransformDirection(moveDirection); // 카메라 방향으로 이동
-        moveDirection.y = 0; // Y축 방향 제거
+        moveDirection = thirdPersonCamera.transform.TransformDirection(moveDirection);
+        moveDirection.y = 0;
+
         Vector3 velocity = MoveSpeed * moveDirection;
-        velocity.y = rigd.velocity.y; // Y축 속도 유지
+        velocity.y = rigd.velocity.y;
         rigd.velocity = velocity;
 
-        // 애니메이션 핸들러에 이동 속도 전달
         UpdateForwardDirection();
         UpdateMoveAnimationBlend();
     }
+
 
     void UpdateMoveAnimationBlend()
     {
@@ -143,21 +158,28 @@ public class PlayerController : MonoBehaviour
 
     public void Dash()
     {
-        if (Time.time < lastDashTime + dashCooldown) return; // 대시 쿨타임 확인
+        if (Time.time < lastDashTime + dashCooldown) return;
+        if (moveDirection == Vector3.zero) return;
 
-        Vector3 dashDirection = thirdPersonCamera.transform.forward; // 카메라 방향으로 대시
-        dashDirection.y = 0; // Y축 방향 제거
-        dashDirection.Normalize();
+        isDashing = true;
+        lastDashTime = Time.time;
 
+        rigd.velocity = Vector3.zero; // 기존 이동 속도 제거
+        rigd.AddForce(moveDirection * DashForce, ForceMode.VelocityChange);
 
-        transform.position = transform.position + dashDirection * DashDistance; // 대시 거리만큼 이동
-        lastDashTime = Time.time; // 대시 시간 갱신
+        StartCoroutine(EndDashAfterDelay());
+    }
+
+    private IEnumerator EndDashAfterDelay()
+    {
+        yield return new WaitForSeconds(DashDuration);
+        isDashing = false;
     }
 
     public void Jump()
     {
         if (!isGrounded) return;
-        rigd.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
+        rigd.AddForce(Vector3.up * JumpForce, ForceMode.VelocityChange);
         isGrounded = false;
 
         // 애니메이션 핸들러에 점프 상태 전달
