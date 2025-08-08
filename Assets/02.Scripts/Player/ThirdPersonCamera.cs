@@ -3,6 +3,7 @@ using UnityEngine;
 public class ThirdPersonCamera : MonoBehaviour
 {
     [SerializeField] private Transform target;  // 따라갈 캐릭터
+    [SerializeField] private LayerMask obstacleMask; // 장애물 레이어 마스크
     [SerializeField] private float distance = 5.0f;
     [SerializeField] private float xSpeed = 120.0f;
     [SerializeField] private float ySpeed = 120.0f;
@@ -24,13 +25,29 @@ public class ThirdPersonCamera : MonoBehaviour
 
     public void Rotate(float mouseX, float mouseY)
     {
+        // 회전 각도 갱신
         x += mouseX * xSpeed * Time.deltaTime;
-        y -= mouseY * ySpeed * Time.deltaTime;
-        y = Mathf.Clamp(y, yMinLimit, yMaxLimit);
+        y = Mathf.Clamp(y - mouseY * ySpeed * Time.deltaTime, yMinLimit, yMaxLimit);
 
+        // 회전 → 위치 계산
         Quaternion rotation = Quaternion.Euler(y, x, 0);
-        Vector3 position = rotation * new Vector3(0.0f, 0.0f, -distance) + target.position + offset;
+        Vector3 desiredPos = target.position + offset - rotation * Vector3.forward * distance;
 
-        transform.SetPositionAndRotation(position, rotation);
+        // 위치 보정 후 적용
+        transform.SetPositionAndRotation(AdjustForObstacles(desiredPos), rotation);
+    }
+
+    private Vector3 AdjustForObstacles(Vector3 desiredPos)
+    {
+        Vector3 startPos = target.position + offset;
+        Vector3 camDir = desiredPos - startPos;
+
+        if (Physics.Raycast(startPos, camDir.normalized, out RaycastHit hit, distance, obstacleMask))
+        {
+            // 표면에 너무 붙지 않도록 살짝 띄움
+            return hit.point - camDir.normalized * 0.1f;
+        }
+
+        return desiredPos;
     }
 }
