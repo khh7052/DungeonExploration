@@ -126,13 +126,24 @@ public class Inventory : MonoBehaviour
         {
             StatModifierData modifier = itemData.statModifiers[i];
             if (modifier == null) continue;
-            characterStats.AddModifier(modifier);
+
+            if(itemData.isEquippable)
+            {
+                if(SelectedItemSlot.IsEquipped)
+                    characterStats.RemoveModifier(modifier);
+                else
+                    characterStats.AddModifier(modifier);
+            }
+            else
+            {
+                characterStats.AddModifier(modifier);
+            }
         }
 
-        Debug.Log($"Using item: {itemData.itemName}");
-
-        // 아이템 사용 후 슬롯 비우기
-        SelectedItemSlot.ItemData = null;
+        if (itemData.isEquippable)
+            SelectedItemSlot.ToggleEquipped();
+        else
+            SelectedItemSlot.ItemData = null;
 
         // UI 업데이트
         UpdateDescription(); // 아이템 사용 후 설명 업데이트

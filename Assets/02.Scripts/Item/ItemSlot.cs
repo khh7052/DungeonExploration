@@ -7,7 +7,11 @@ public class ItemSlot : MonoBehaviour
 {
     [SerializeField] private ItemData itemData;
     [SerializeField] private Image itemIcon;
+    [SerializeField] private Image itemBackground;
+    [SerializeField] private Color selectedColor = Color.yellow; // 선택된 슬롯의 배경색
+    [SerializeField] private Color defaultColor = Color.white; // 기본 배경색
     [SerializeField] private Outline outline;
+    private bool isEquipped = false;
 
     public ItemData ItemData
     {
@@ -19,9 +23,20 @@ public class ItemSlot : MonoBehaviour
         }
     }
 
+    public bool IsEquipped
+    {
+        get => isEquipped;
+    }
+
     void UpdateIconImage()
     {
         itemIcon.sprite = itemData != null ? itemData.itemIcon : null;
+    }
+
+    public void ToggleEquipped()
+    {
+        isEquipped = !isEquipped;
+        itemBackground.color = isEquipped ? selectedColor : defaultColor; // 색상 변경
     }
 
     public void Select(bool select)

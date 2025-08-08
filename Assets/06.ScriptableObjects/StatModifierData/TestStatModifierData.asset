@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552bdc72b3937574eb4a87d8a1427281, type: 3}
   m_Name: TestStatModifierData
   m_EditorClassIdentifier: 
-  statType: 1
+  statType: 6
   modifierType: 0
-  value: 10
-  useDuration: 1
+  value: 20
+  useDuration: 0
   duration: 2

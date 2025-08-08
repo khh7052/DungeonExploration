@@ -9,5 +9,7 @@ public class ItemData : ScriptableObject
     public string itemDescription;
     public Sprite itemIcon;
     public GameObject itemPrefab;
+    public bool isEquippable = true; // 아이템이 장착 가능한지 여부
     public StatModifierData[] statModifiers;
+
 }

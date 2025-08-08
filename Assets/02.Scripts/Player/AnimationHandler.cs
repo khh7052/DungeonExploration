@@ -12,7 +12,6 @@ public class AnimationHandler : MonoBehaviour
 
     public void Jump(bool isJump)
     {
-        Debug.Log("Jump");
         anim.SetBool(AnimatorHash.JumpHash, isJump);
     }
 

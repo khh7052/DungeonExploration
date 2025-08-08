@@ -51,6 +51,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemData: {fileID: 0}
   itemIcon: {fileID: 8606554341829178539}
+  itemBackground: {fileID: 8600140438031737599}
+  selectedColor: {r: 0.41048482, g: 1, b: 0.015686274, a: 1}
+  defaultColor: {r: 0.34509805, g: 0.34509805, b: 0.34509805, a: 1}
   outline: {fileID: 4757393590766825149}
 --- !u!1 &1679799938755627586
 GameObject:
