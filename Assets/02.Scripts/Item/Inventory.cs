@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour
     [SerializeField] private Transform itemSlotParent; // 아이템 슬롯이 배치될 부모
     [SerializeField] private ItemSlot itemSlotPrefab; // 아이템 슬롯 프리팹
     private ItemSlot[] itemSlots;
+    private int selectedSlotIndex; // 현재 선택된 슬롯 인덱스
 
     public ItemSlot[] ItemSlots
     {
@@ -68,5 +69,14 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void SelectItemSlot(int newIndex)
+    {
+        if (newIndex < 0 || newIndex >= itemSlots.Length) return;
+
+        selectedSlotIndex = newIndex;
+
+        for (int i = 0; i < itemSlots.Length; i++)
+            itemSlots[i].Select(i == selectedSlotIndex); // 선택된 슬롯에만 선택 표시
+    }
 
 }

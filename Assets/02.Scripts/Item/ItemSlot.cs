@@ -7,6 +7,7 @@ public class ItemSlot : MonoBehaviour
 {
     [SerializeField] private ItemData itemData;
     [SerializeField] private Image itemIcon;
+    [SerializeField] private Outline outline;
 
     public ItemData ItemData
     {
@@ -21,6 +22,12 @@ public class ItemSlot : MonoBehaviour
     void UpdateIconImage()
     {
         itemIcon.sprite = itemData != null ? itemData.itemIcon : null;
+    }
+
+    public void Select(bool select)
+    {
+        if (outline != null)
+            outline.enabled = select;
     }
 
 

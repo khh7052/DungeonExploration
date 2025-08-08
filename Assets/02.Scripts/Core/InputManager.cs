@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 public class InputManager : Singleton<InputManager>
 {
@@ -12,10 +13,13 @@ public class InputManager : Singleton<InputManager>
     public bool FireInput { get; private set; }
     public bool DashInput { get; private set; }
     public bool InteractInput { get; private set; }
-    public bool InventoryInput { get; private set; }
+    public bool InformationInput { get; private set; }
     public bool OptionInput { get; private set; }
     public bool DropInput { get; private set; }
     public bool ExploreInput { get; private set; }
+    public int SelectInput { get; private set; }
+
+    public event Action<int> SelectAction;
 
     public bool IsMoving => MoveInput.sqrMagnitude > 0.01f;
 
@@ -91,16 +95,35 @@ public class InputManager : Singleton<InputManager>
         }
     }
 
-    public void OnInventory(InputAction.CallbackContext callback)
+    public void OnInformation(InputAction.CallbackContext callback)
     {
         if (callback.performed)
         {
-            InventoryInput = true;
+            InformationInput = true;
         }
         else if (callback.canceled)
         {
-            InventoryInput = false;
+            InformationInput = false;
         }
+    }
+
+    public void OnSelect(InputAction.CallbackContext callback)
+    {
+        if (callback.started)
+        {
+            var keyControl = callback.control as KeyControl;
+            if (keyControl != null)
+            {
+                string keyName = keyControl.keyCode.ToString();
+                if (keyName.StartsWith("Digit"))
+                {
+                    SelectInput = keyName[^1] - '0';
+                    SelectAction?.Invoke(SelectInput);
+                    Debug.Log($"SelectInput: {SelectInput}");
+                }
+            }
+        }
+
     }
 
     public void OnOption(InputAction.CallbackContext callback)

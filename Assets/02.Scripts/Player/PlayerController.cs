@@ -75,6 +75,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         input = InputManager.Instance;
+        input.SelectAction += Select; // 인벤토리 선택 액션 등록
     }
 
     private void Update()
@@ -148,6 +149,14 @@ public class PlayerController : MonoBehaviour
             currentInteractable = null; // 상호작용 후 초기화
         }
     }
+
+    public void Select(int inputNumber)
+    {
+        if (inventory == null) return;
+
+        inventory.SelectItemSlot(inputNumber - 1);
+    }
+
 
     void UpdatePromptText()
     {
