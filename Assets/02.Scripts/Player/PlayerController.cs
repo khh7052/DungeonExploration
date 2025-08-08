@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
 {
     private InputManager input;
     private Rigidbody rigd;
-    [SerializeField] private Inventory inventory;
 
     [Header("Move")]
     [SerializeField] private LayerMask groundLayerMask;
@@ -34,6 +33,10 @@ public class PlayerController : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private HUD hud;
+
+    [Header("Inventory")]
+    [SerializeField] private Inventory inventory;
+    [SerializeField] private Transform dropTransform;
 
     public int Health
     {
@@ -76,6 +79,7 @@ public class PlayerController : MonoBehaviour
     {
         input = InputManager.Instance;
         input.SelectAction += Select; // 인벤토리 선택 액션 등록
+        input.DropAction += Drop; // 인벤토리 드롭 액션 등록
     }
 
     private void Update()
@@ -155,6 +159,11 @@ public class PlayerController : MonoBehaviour
         if (inventory == null) return;
 
         inventory.SelectItemSlot(inputNumber - 1);
+    }
+
+    public void Drop()
+    {
+        inventory.Drop(dropTransform.position);
     }
 
 

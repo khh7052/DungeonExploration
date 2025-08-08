@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54fc6ce144104f648b62a73b998148ab, type: 3}
-  m_Name: ItemData
+  m_Name: TestItemData
   m_EditorClassIdentifier: 
   itemName: Test
   itemDescription: 
   itemIcon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 2598592935427363076, guid: 4d16fb4bbe6264945a2babf572b69baa,
+    type: 3}
   statModifiers: []

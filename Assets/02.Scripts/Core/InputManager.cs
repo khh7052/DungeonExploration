@@ -15,11 +15,11 @@ public class InputManager : Singleton<InputManager>
     public bool InteractInput { get; private set; }
     public bool InformationInput { get; private set; }
     public bool OptionInput { get; private set; }
-    public bool DropInput { get; private set; }
     public bool ExploreInput { get; private set; }
     public int SelectInput { get; private set; }
 
     public event Action<int> SelectAction;
+    public event Action DropAction;
 
     public bool IsMoving => MoveInput.sqrMagnitude > 0.01f;
 
@@ -140,14 +140,8 @@ public class InputManager : Singleton<InputManager>
 
     public void OnDrop(InputAction.CallbackContext callback)
     {
-        if (callback.performed)
-        {
-            DropInput = true;
-        }
-        else if (callback.canceled)
-        {
-            DropInput = false;
-        }
+        if (callback.started)
+            DropAction?.Invoke();
     }
 
     public void OnExplore(InputAction.CallbackContext callback)

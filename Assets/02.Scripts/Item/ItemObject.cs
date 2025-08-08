@@ -5,6 +5,12 @@ using UnityEngine;
 public class ItemObject : MonoBehaviour, IInteractable
 {
     [SerializeField] private ItemData itemData;
+    private Rigidbody rigd;
+
+    private void Awake()
+    {
+        rigd = GetComponent<Rigidbody>();
+    }
 
     public ItemData ItemData
     {

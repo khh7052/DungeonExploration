@@ -30,5 +30,12 @@ public class ItemSlot : MonoBehaviour
             outline.enabled = select;
     }
 
-
+    public void Drop(Vector3 dropPosition)
+    {
+        if (itemData != null)
+        {
+            Instantiate(itemData.itemPrefab, dropPosition, Quaternion.identity);
+            ItemData = null;
+        }
+    }
 }
