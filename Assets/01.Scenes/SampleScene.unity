@@ -1168,7 +1168,7 @@ MonoBehaviour:
     baseValue: 15
     modifiers: []
   - type: 6
-    baseValue: 50
+    baseValue: 60
     modifiers: []
   - type: 7
     baseValue: 0.1

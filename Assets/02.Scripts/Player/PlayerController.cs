@@ -143,6 +143,9 @@ public class PlayerController : MonoBehaviour
     void UpdateMoveAnimationBlend()
     {
         float target = moveDirection == Vector3.zero ? 0f : 1f; // 이동 방향이 없으면 0, 있으면 1
+
+        if (Mathf.Approximately(moveAnimBlend, target)) return; // 현재 값과 목표 값이 거의 같으면 업데이트하지 않음
+
         moveAnimBlend = Mathf.Lerp(moveAnimBlend, target, Time.deltaTime * moveAnimLerpSpeed);
         animHandler.MoveSpeed(moveAnimBlend);
     }
@@ -172,8 +175,11 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator EndDashAfterDelay()
     {
+        animHandler.Dash(true); // 대시 애니메이션 시작
         yield return new WaitForSeconds(DashDuration);
         isDashing = false;
+        animHandler.Dash(false); // 대시 애니메이션 종료
+        animHandler.Jump(!isGrounded); // 대시 후 착지 상태로 애니메이션 설정
     }
 
     public void Jump()
@@ -181,9 +187,6 @@ public class PlayerController : MonoBehaviour
         if (!isGrounded) return;
         rigd.AddForce(Vector3.up * JumpForce, ForceMode.VelocityChange);
         isGrounded = false;
-
-        // 애니메이션 핸들러에 점프 상태 전달
-        animHandler.Jump(true);
     }
 
     public void Look()
@@ -274,5 +277,4 @@ public class PlayerController : MonoBehaviour
             animHandler.Jump(true);
         }
     }
-
 }

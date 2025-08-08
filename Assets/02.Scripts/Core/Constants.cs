@@ -36,6 +36,7 @@ namespace Constants
     {
         public static readonly int MoveSpeedHash = Animator.StringToHash("MoveSpeed");
         public static readonly int JumpHash = Animator.StringToHash("Jump");
+        public static readonly int DashHash = Animator.StringToHash("Dash");
     }
 
 }
