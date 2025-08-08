@@ -48,6 +48,7 @@ public class Inventory : MonoBehaviour
         if (SelectedItemSlot != null && SelectedItemSlot.ItemData == null)
         {
             SelectedItemSlot.ItemData = itemData; // 선택된 슬롯에 아이템 추가
+            UpdateDescription();
             return true; // 아이템 추가 성공
         }
 
@@ -78,7 +79,7 @@ public class Inventory : MonoBehaviour
     public void Drop(Vector3 dropPosition)
     {
         SelectedItemSlot?.Drop(dropPosition); // 선택된 슬롯에서 아이템 드롭
-        uiManager.HUD.UpdateDescriptionText("");
+        UpdateDescription();
     }
 
     public ItemData GetItem(int index)
@@ -94,6 +95,12 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 0; i < itemSlots.Length; i++)
             itemSlots[i].ItemData = null; // 모든 슬롯의 아이템 데이터 초기화
+
+        selectedSlotIndex = -1; // 선택된 슬롯 초기화
+        for (int i = 0; i < itemSlots.Length; i++)
+            itemSlots[i].Select(false); // 모든 슬롯 선택 표시 해제
+
+        UpdateDescription(); // 설명 업데이트
     }
 
     public void SelectItemSlot(int newIndex)
@@ -105,9 +112,42 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < itemSlots.Length; i++)
             itemSlots[i].Select(i == selectedSlotIndex); // 선택된 슬롯에만 선택 표시
 
-        Debug.Log($"Selected slot index: {selectedSlotIndex}");
-        string description = selectedSlotIndex < 0? "" : SelectedItemSlot.ItemData?.itemDescription;
-        uiManager.HUD.UpdateDescriptionText(description);
+        UpdateDescription();
     }
 
+    public void Use(CharacterStats characterStats)
+    {
+        if (SelectedItemSlot == null || SelectedItemSlot.ItemData == null) return;
+
+        // 아이템 사용 로직
+        ItemData itemData = SelectedItemSlot.ItemData;
+
+        for(int i = 0; i < itemData.statModifiers.Length; i++)
+        {
+            StatModifierData modifier = itemData.statModifiers[i];
+            if (modifier == null) continue;
+            characterStats.AddModifier(modifier);
+        }
+
+        Debug.Log($"Using item: {itemData.itemName}");
+
+        // 아이템 사용 후 슬롯 비우기
+        SelectedItemSlot.ItemData = null;
+
+        // UI 업데이트
+        UpdateDescription(); // 아이템 사용 후 설명 업데이트
+    }
+
+
+    void UpdateDescription()
+    {
+        if (SelectedItemSlot != null && SelectedItemSlot.ItemData != null)
+        {
+            uiManager.HUD.UpdateDescriptionText(SelectedItemSlot.ItemData.itemDescription);
+        }
+        else
+        {
+            uiManager.HUD.UpdateDescriptionText("");
+        }
+    }
 }

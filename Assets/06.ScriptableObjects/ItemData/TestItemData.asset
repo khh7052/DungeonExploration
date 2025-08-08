@@ -17,4 +17,5 @@ MonoBehaviour:
   itemIcon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   itemPrefab: {fileID: 2598592935427363076, guid: 4d16fb4bbe6264945a2babf572b69baa,
     type: 3}
-  statModifiers: []
+  statModifiers:
+  - {fileID: 11400000, guid: 6ee81fc206bd1a5448c8c7b6bd3459c4, type: 2}

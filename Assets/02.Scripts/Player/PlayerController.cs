@@ -80,6 +80,7 @@ public class PlayerController : MonoBehaviour
 
         input.SelectAction += Select; // 인벤토리 선택 액션 등록
         input.DropAction += Drop; // 인벤토리 드롭 액션 등록
+        input.UseAction += Use; // 인벤토리 사용 액션 등록
     }
 
     private void Update()
@@ -199,6 +200,12 @@ public class PlayerController : MonoBehaviour
         {
             Debug.LogWarning("Inventory is full or item could not be added.");
         }
+    }
+
+    public void Use()
+    {
+        if (inventory == null) return;
+        inventory.Use(characterStats);
     }
 
 

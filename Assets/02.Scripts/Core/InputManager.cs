@@ -20,6 +20,7 @@ public class InputManager : Singleton<InputManager>
 
     public event Action<int> SelectAction;
     public event Action DropAction;
+    public event Action UseAction;
 
     public bool IsMoving => MoveInput.sqrMagnitude > 0.01f;
 
@@ -119,7 +120,6 @@ public class InputManager : Singleton<InputManager>
                 {
                     SelectInput = keyName[^1] - '0';
                     SelectAction?.Invoke(SelectInput);
-                    Debug.Log($"SelectInput: {SelectInput}");
                 }
             }
         }
@@ -156,4 +156,9 @@ public class InputManager : Singleton<InputManager>
         }
     }
 
+    public void OnUse(InputAction.CallbackContext callback)
+    {
+        if (callback.started)
+            UseAction?.Invoke();
+    }
 }

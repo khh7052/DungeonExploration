@@ -33,15 +33,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Fire",
-                    "type": "Button",
-                    "id": "0704806f-2666-45d5-8fe6-0412bb7c51c9",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Dash",
                     "type": "Button",
                     "id": "f16a2988-4ca9-4eb1-8c98-e6dea194add0",
@@ -99,6 +90,24 @@
                     "name": "Select",
                     "type": "Button",
                     "id": "36df80a4-8529-49fb-bc0e-3841fe0e724e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Fire",
+                    "type": "Button",
+                    "id": "0704806f-2666-45d5-8fe6-0412bb7c51c9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Use",
+                    "type": "Button",
+                    "id": "949f3dd3-a296-4b41-a555-450fcbd12c48",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -251,17 +260,6 @@
                 },
                 {
                     "name": "",
-                    "id": "63cdedc5-1a2c-48f4-8a57-fe1ec7f0ab11",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "05eebd29-9007-469b-b86e-8a9b53ff3b20",
                     "path": "<Keyboard>/1",
                     "interactions": "",
@@ -356,6 +354,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "63cdedc5-1a2c-48f4-8a57-fe1ec7f0ab11",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ba724547-6fe6-4d97-b474-9f7eec920b3f",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Use",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

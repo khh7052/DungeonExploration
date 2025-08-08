@@ -14,7 +14,7 @@ public class HUD : BaseUI
     private void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
-        playerController.characterStats.GetStat(StatType.CurrentHP).RegisterBaseValueChanged(UpdateHP);
+        playerController.characterStats.GetStat(StatType.CurrentHP).BaseValueChanged += UpdateHP;
 
         UpdateHP(0, playerController.Health);
     }
