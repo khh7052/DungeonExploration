@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     private InputManager input;
     private Rigidbody rigd;
+    [SerializeField] private Inventory inventory;
 
     [Header("Move")]
     [SerializeField] private LayerMask groundLayerMask;
@@ -25,6 +26,11 @@ public class PlayerController : MonoBehaviour
     [Header("Stats")]
     [SerializeField] private Stat[] initStats;
     public CharacterStats characterStats;
+
+    [Header("Interact")]
+    [SerializeField] private float interactDistance = 3f; // 상호작용 거리
+    [SerializeField] private LayerMask interactableLayerMask; // 상호작용 가능한 레이어 마스크
+    private IInteractable currentInteractable; // 현재 상호작용 가능한 객체
 
     public int Health
     {
@@ -70,16 +76,17 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        CheckInteractableObject();
         Move();
-        if(input.DashInput)
-        {
-            Dash();
-        }
 
-        if(input.JumpInput)
-        {
+        if(input.DashInput)
+            Dash();
+
+        if (input.JumpInput)
             Jump();
-        }
+
+        if (input.InteractInput)
+            Interact();
     }
 
     private void LateUpdate()
@@ -128,6 +135,49 @@ public class PlayerController : MonoBehaviour
 
         thirdPersonCamera.Rotate(mouseX, mouseY);
     }
+
+    public void Interact()
+    {
+        if (currentInteractable != null)
+        {
+            currentInteractable.Interact(this);
+            currentInteractable = null; // 상호작용 후 초기화
+        }
+    }
+
+    void CheckInteractableObject()
+    {
+        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)); // 카메라 중앙 위치
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, interactDistance, interactableLayerMask))
+        {
+            IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+            if (interactable != null)
+                currentInteractable = interactable; // 현재 상호작용 가능한 객체 설정
+            else
+                currentInteractable = null; // 상호작용 가능한 객체가 없으면 초기화
+        }
+        else
+            currentInteractable = null; // 레이캐스트에 맞는 객체가 없으면 초기화
+    }
+
+
+    
+
+    public void AddItem(ItemData itemData)
+    {
+        if (inventory == null || itemData == null) return;
+        
+        if (inventory.AddItem(itemData))
+        {
+            Debug.Log($"Added item: {itemData.itemName}");
+        }
+        else
+        {
+            Debug.LogWarning("Inventory is full or item could not be added.");
+        }
+    }
+
 
     private void OnCollisionEnter(Collision collision)
     {

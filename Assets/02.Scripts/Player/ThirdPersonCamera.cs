@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class ThirdPersonCamera : MonoBehaviour
 {
-    public Transform target;  // 따라갈 캐릭터
-    public float distance = 5.0f;
-    public float xSpeed = 120.0f;
-    public float ySpeed = 120.0f;
+    [SerializeField] private Transform target;  // 따라갈 캐릭터
+    [SerializeField] private float distance = 5.0f;
+    [SerializeField] private float xSpeed = 120.0f;
+    [SerializeField] private float ySpeed = 120.0f;
 
-    public float yMinLimit = -20f;
-    public float yMaxLimit = 80f;
+    [SerializeField] private float yMinLimit = -20f;
+    [SerializeField] private float yMaxLimit = 80f;
+
+    [SerializeField] private Vector3 offset = new Vector3(0, 1.5f, 0); // 카메라의 높이 조정
 
     private float x = 0.0f;
     private float y = 0.0f;
@@ -27,7 +29,7 @@ public class ThirdPersonCamera : MonoBehaviour
         y = Mathf.Clamp(y, yMinLimit, yMaxLimit);
 
         Quaternion rotation = Quaternion.Euler(y, x, 0);
-        Vector3 position = rotation * new Vector3(0.0f, 0.0f, -distance) + target.position;
+        Vector3 position = rotation * new Vector3(0.0f, 0.0f, -distance) + target.position + offset;
 
         transform.SetPositionAndRotation(position, rotation);
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Constants;
 
-[CreateAssetMenu(fileName = "Data/StatModifierData")]
+[CreateAssetMenu(menuName = "Data/StatModifierData")]
 public class StatModifierData : ScriptableObject
 {
     public StatType statType;
