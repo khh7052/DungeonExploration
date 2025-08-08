@@ -13,6 +13,10 @@ public class PlayerController : MonoBehaviour
 
     [Header("Move")]
     [SerializeField] private LayerMask groundLayerMask;
+    [SerializeField] private float forwardDirectionLerpSpeed = 2f;
+    [SerializeField] private float moveAnimLerpSpeed = 2f;
+    private Vector3 moveDirection;
+    private float moveAnimBlend = 0;
 
     private bool isGrounded = true;
 
@@ -109,7 +113,7 @@ public class PlayerController : MonoBehaviour
     public void Move()
     {
         Vector2 moveInput = input.MoveInput;
-        Vector3 moveDirection = new Vector3(moveInput.x, 0, moveInput.y).normalized;
+        moveDirection = new Vector3(moveInput.x, 0, moveInput.y).normalized;
         moveDirection = thirdPersonCamera.transform.TransformDirection(moveDirection); // 카메라 방향으로 이동
         moveDirection.y = 0; // Y축 방향 제거
         Vector3 velocity = MoveSpeed * moveDirection;
@@ -117,12 +121,24 @@ public class PlayerController : MonoBehaviour
         rigd.velocity = velocity;
 
         // 애니메이션 핸들러에 이동 속도 전달
-        float animMoveSpeed = moveDirection == Vector3.zero ? 0f : 1f;
-        animHandler.MoveSpeed(animMoveSpeed);
+        UpdateForwardDirection();
+        UpdateMoveAnimationBlend();
+    }
 
-        if (moveDirection == Vector3.zero) return;
-        transform.forward = moveDirection; // 캐릭터가 이동 방향을 바라보도록 설정
+    void UpdateMoveAnimationBlend()
+    {
+        float target = moveDirection == Vector3.zero ? 0f : 1f; // 이동 방향이 없으면 0, 있으면 1
+        moveAnimBlend = Mathf.Lerp(moveAnimBlend, target, Time.deltaTime * moveAnimLerpSpeed);
+        animHandler.MoveSpeed(moveAnimBlend);
+    }
 
+    void UpdateForwardDirection()
+    {
+        if (moveDirection == Vector3.zero) return; // 이동 방향이 없으면 업데이트하지 않음
+
+        // 현재 회전 속도에 따라 회전
+        Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, forwardDirectionLerpSpeed * Time.deltaTime);
     }
 
     public void Dash()
