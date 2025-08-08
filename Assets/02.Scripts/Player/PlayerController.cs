@@ -32,6 +32,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask interactableLayerMask; // 상호작용 가능한 레이어 마스크
     private IInteractable currentInteractable; // 현재 상호작용 가능한 객체
 
+    [Header("UI")]
+    [SerializeField] private HUD hud;
+
     public int Health
     {
         get => (int)characterStats.GetStat(StatType.CurrentHP).FinalValue;
@@ -92,6 +95,7 @@ public class PlayerController : MonoBehaviour
     private void LateUpdate()
     {
         Look();
+        UpdatePromptText();
     }
 
     public void Move()
@@ -143,6 +147,14 @@ public class PlayerController : MonoBehaviour
             currentInteractable.Interact(this);
             currentInteractable = null; // 상호작용 후 초기화
         }
+    }
+
+    void UpdatePromptText()
+    {
+        if (currentInteractable != null)
+            hud.UpdatePromptText(currentInteractable.GetPrompt());
+        else
+            hud.UpdatePromptText("");
     }
 
     void CheckInteractableObject()

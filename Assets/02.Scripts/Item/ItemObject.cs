@@ -24,4 +24,6 @@ public class ItemObject : MonoBehaviour, IInteractable
         controller.AddItem(itemData);
         gameObject.SetActive(false);
     }
+
+    public string GetPrompt() => $"≈âµÊ«œ±‚ E";
 }

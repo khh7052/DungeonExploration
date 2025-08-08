@@ -5,4 +5,6 @@ using UnityEngine;
 public interface IInteractable
 {
     void Interact(PlayerController controller);
+    string GetPrompt();
+
 }

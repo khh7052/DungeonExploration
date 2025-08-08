@@ -7,7 +7,8 @@ using Constants;
 public class HUD : BaseUI
 {
     private PlayerController playerController;
-    public TMP_Text hpText;
+    [SerializeField] private TMP_Text hpText;
+    [SerializeField] private TMP_Text promptText;
 
     private void Start()
     {
@@ -22,6 +23,14 @@ public class HUD : BaseUI
         if (hpText != null)
         {
             hpText.text = "HP: " + finalValue.ToString();
+        }
+    }
+
+    public void UpdatePromptText(string text)
+    {
+        if (promptText != null)
+        {
+            promptText.text = text;
         }
     }
 
