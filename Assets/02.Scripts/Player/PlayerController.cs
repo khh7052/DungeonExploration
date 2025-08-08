@@ -9,12 +9,12 @@ public class PlayerController : MonoBehaviour
     private InputManager input;
     private UIManager uiManager;
     private Rigidbody rigd;
+    private AnimationHandler animHandler;
 
     [Header("Move")]
     [SerializeField] private LayerMask groundLayerMask;
 
     private bool isGrounded = true;
-    private bool isJumping = false;
 
     [Header("Look")]
     [SerializeField] private ThirdPersonCamera thirdPersonCamera;
@@ -65,6 +65,8 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rigd = GetComponent<Rigidbody>();
+        animHandler = GetComponent<AnimationHandler>();
+
         Cursor.lockState = CursorLockMode.Locked; // 커서를 잠금 상태로 설정
 
         // 캐릭터 스탯 초기화
@@ -114,8 +116,13 @@ public class PlayerController : MonoBehaviour
         velocity.y = rigd.velocity.y; // Y축 속도 유지
         rigd.velocity = velocity;
 
-        if(moveDirection == Vector3.zero) return;
+        // 애니메이션 핸들러에 이동 속도 전달
+        float animMoveSpeed = moveDirection == Vector3.zero ? 0f : 1f;
+        animHandler.MoveSpeed(animMoveSpeed);
+
+        if (moveDirection == Vector3.zero) return;
         transform.forward = moveDirection; // 캐릭터가 이동 방향을 바라보도록 설정
+
     }
 
     public void Dash()
@@ -136,6 +143,9 @@ public class PlayerController : MonoBehaviour
         if (!isGrounded) return;
         rigd.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
         isGrounded = false;
+
+        // 애니메이션 핸들러에 점프 상태 전달
+        animHandler.Jump(true);
     }
 
     public void Look()
@@ -214,6 +224,7 @@ public class PlayerController : MonoBehaviour
         if (groundLayerMask.value == (groundLayerMask.value | 1 << collision.gameObject.layer))
         {
             isGrounded = true;
+            animHandler.Jump(false);
         }
     }
 
@@ -222,6 +233,7 @@ public class PlayerController : MonoBehaviour
         if (groundLayerMask.value == (groundLayerMask.value | 1 << collision.gameObject.layer))
         {
             isGrounded = false;
+            animHandler.Jump(true);
         }
     }
 

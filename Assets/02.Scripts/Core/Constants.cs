@@ -31,5 +31,10 @@ namespace Constants
         Multiplicative, // x1.2
     }
 
+    public static class AnimatorHash
+    {
+        public static readonly int MoveSpeedHash = Animator.StringToHash("MoveSpeed");
+        public static readonly int JumpHash = Animator.StringToHash("Jump");
+    }
 
 }
