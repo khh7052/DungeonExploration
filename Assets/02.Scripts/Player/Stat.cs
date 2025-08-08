@@ -2,11 +2,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Constants;
 using System;
+using System.Collections;
 
 [System.Serializable]
 public class Stat
 {
-    public event Action<float, float> BaseValueChanged;
+    public event Action<float> FinalValueChanged;
 
     [SerializeField] private StatType type;
     [SerializeField] private float baseValue;
@@ -48,6 +49,7 @@ public class Stat
     public void AddModifier(StatModifierData modifier)
     {
         modifiers.Add(modifier);
+        CoroutineRunner.Instance.StartCoroutine(RemoveModifierAfterDuration(modifier));
         MarkDirty();
     }
 
@@ -56,31 +58,21 @@ public class Stat
         modifiers.Remove(modifier);
         MarkDirty();
     }
-    /*
-    public void Update(float deltaTime)
+
+    IEnumerator RemoveModifierAfterDuration(StatModifierData modifer)
     {
-        bool removed = false;
-
-        for (int i = modifiers.Count - 1; i >= 0; i--)
+        if (modifer.useDuration && modifer.duration > 0)
         {
-            var m = modifiers[i];
-            if (m.duration > 0) // 무한 지속은 0 이하로
-            {
-                m.duration -= deltaTime;
-                if (m.duration <= 0)
-                {
-                    modifiers.RemoveAt(i);
-                    removed = true;
-                }
-            }
+            yield return new WaitForSeconds(modifer.duration);
+            RemoveModifier(modifer);
         }
-
-        if (removed)
-            MarkDirty();
     }
-    */
 
-    private void MarkDirty() => isDirty = true;
+    private void MarkDirty()
+    {
+        isDirty = true;
+        FinalValueChanged?.Invoke(FinalValue); // 최종 값이 변경되었음을 알림
+    }
 
     private void RecalculateFinalValue()
     {
@@ -95,7 +87,6 @@ public class Stat
                 mulSum += modifier.value;
         }
 
-        // mulSum이 1이면 100% 증가 = x2
         finalValue = (baseValue + addSum) * mulSum;
     }
 }

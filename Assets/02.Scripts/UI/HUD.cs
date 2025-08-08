@@ -14,12 +14,12 @@ public class HUD : BaseUI
     private void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
-        playerController.characterStats.GetStat(StatType.CurrentHP).BaseValueChanged += UpdateHP;
+        playerController.characterStats.GetStat(StatType.CurrentHP).FinalValueChanged += UpdateHP;
 
-        UpdateHP(0, playerController.Health);
+        UpdateHP(playerController.Health);
     }
 
-    public void UpdateHP(float baseValue, float finalValue)
+    public void UpdateHP(float finalValue)
     {
         if (hpText == null) return;
         hpText.text = "HP: " + finalValue.ToString();
