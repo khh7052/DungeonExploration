@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    private UIManager uiManager;
+
     [SerializeField] private int inventorySize = 20; // 기본 인벤토리 크기
     [SerializeField] private Transform itemSlotParent; // 아이템 슬롯이 배치될 부모
     [SerializeField] private ItemSlot itemSlotPrefab; // 아이템 슬롯 프리팹
@@ -35,8 +38,19 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        uiManager = UIManager.Instance;
+    }
+
     public bool AddItem(ItemData itemData)
     {
+        if (SelectedItemSlot != null && SelectedItemSlot.ItemData == null)
+        {
+            SelectedItemSlot.ItemData = itemData; // 선택된 슬롯에 아이템 추가
+            return true; // 아이템 추가 성공
+        }
+
         for (int i = 0; i < itemSlots.Length; i++)
         {
             if (itemSlots[i].ItemData == null)
@@ -61,7 +75,11 @@ public class Inventory : MonoBehaviour
         return false; // 해당 아이템이 인벤토리에 없음
     }
 
-    public void Drop(Vector3 dropPosition) => SelectedItemSlot?.Drop(dropPosition); // 선택된 슬롯에서 아이템 드롭
+    public void Drop(Vector3 dropPosition)
+    {
+        SelectedItemSlot?.Drop(dropPosition); // 선택된 슬롯에서 아이템 드롭
+        uiManager.HUD.UpdateDescriptionText("");
+    }
 
     public ItemData GetItem(int index)
     {
@@ -86,6 +104,10 @@ public class Inventory : MonoBehaviour
 
         for (int i = 0; i < itemSlots.Length; i++)
             itemSlots[i].Select(i == selectedSlotIndex); // 선택된 슬롯에만 선택 표시
+
+        Debug.Log($"Selected slot index: {selectedSlotIndex}");
+        string description = selectedSlotIndex < 0? "" : SelectedItemSlot.ItemData?.itemDescription;
+        uiManager.HUD.UpdateDescriptionText(description);
     }
 
 }

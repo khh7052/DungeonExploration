@@ -7,6 +7,7 @@ using Constants;
 public class PlayerController : MonoBehaviour
 {
     private InputManager input;
+    private UIManager uiManager;
     private Rigidbody rigd;
 
     [Header("Move")]
@@ -30,9 +31,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float interactDistance = 3f; // 상호작용 거리
     [SerializeField] private LayerMask interactableLayerMask; // 상호작용 가능한 레이어 마스크
     private IInteractable currentInteractable; // 현재 상호작용 가능한 객체
-
-    [Header("UI")]
-    [SerializeField] private HUD hud;
 
     [Header("Inventory")]
     [SerializeField] private Inventory inventory;
@@ -78,6 +76,8 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         input = InputManager.Instance;
+        uiManager = UIManager.Instance;
+
         input.SelectAction += Select; // 인벤토리 선택 액션 등록
         input.DropAction += Drop; // 인벤토리 드롭 액션 등록
     }
@@ -147,28 +147,23 @@ public class PlayerController : MonoBehaviour
 
     public void Interact()
     {
-        if (currentInteractable != null)
-        {
-            currentInteractable.Interact(this);
-            currentInteractable = null; // 상호작용 후 초기화
-        }
+        if (currentInteractable == null) return;
+        currentInteractable.Interact(this);
+        currentInteractable = null; // 상호작용 후 초기화
     }
 
     public void Select(int inputNumber)
     {
         if (inventory == null) return;
-
         inventory.SelectItemSlot(inputNumber - 1);
     }
 
-    public void Drop()
-    {
-        inventory.Drop(dropTransform.position);
-    }
-
+    public void Drop() => inventory.Drop(dropTransform.position);
 
     void UpdatePromptText()
     {
+        HUD hud = uiManager.HUD;
+
         if (currentInteractable != null)
             hud.UpdatePromptText(currentInteractable.GetPrompt());
         else
@@ -190,8 +185,6 @@ public class PlayerController : MonoBehaviour
         else
             currentInteractable = null; // 레이캐스트에 맞는 객체가 없으면 초기화
     }
-
-
     
 
     public void AddItem(ItemData itemData)
