@@ -12,13 +12,18 @@ public class PlayerController : MonoBehaviour
     private AnimationHandler animHandler;
 
     [Header("Move")]
-    [SerializeField] private LayerMask groundLayerMask;
+    [SerializeField] private LayerMask groundLayerMask; 
+    [SerializeField] private Transform groundCheckPoint; // 발 위치 기준점
+    [SerializeField] private float groundCheckRadius = 0.3f; // 구체 반지름
+    [SerializeField] private float groundCheckDistance = 0.2f; // SphereCast 거리
+
     [SerializeField] private float forwardDirectionLerpSpeed = 2f;
     [SerializeField] private float moveAnimLerpSpeed = 2f;
     private Vector3 moveDirection;
     private float moveAnimBlend = 0;
 
     private bool isGrounded = true;
+    private bool isJumping = false;
 
     [Header("Look")]
     [SerializeField] private ThirdPersonCamera thirdPersonCamera;
@@ -99,6 +104,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        isGrounded = CheckGroundObject(); // 매 프레임마다 지면 체크
         CheckInteractableObject();
         Move();
 
@@ -107,6 +113,8 @@ public class PlayerController : MonoBehaviour
 
         if (input.JumpInput)
             Jump();
+
+        animHandler.Jump(!isGrounded); // 점프 애니메이션 업데이트
     }
 
     private void LateUpdate()
@@ -183,8 +191,9 @@ public class PlayerController : MonoBehaviour
     public void Jump()
     {
         if (!isGrounded) return;
+        if (isJumping) return;
         rigd.AddForce(Vector3.up * JumpForce, ForceMode.VelocityChange);
-        isGrounded = false;
+        isJumping = true;
     }
 
     public void Look()
@@ -256,22 +265,40 @@ public class PlayerController : MonoBehaviour
         inventory.Use(characterStats);
     }
 
-
     private void OnCollisionEnter(Collision collision)
     {
-        if (groundLayerMask.value == (groundLayerMask.value | 1 << collision.gameObject.layer))
+        if (CheckGroundObject())
         {
-            isGrounded = true;
-            animHandler.Jump(false);
+            isJumping = false; // 착지 시 점프 상태 초기화
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private bool CheckGroundObject()
+        => Physics.SphereCast(groundCheckPoint.position, groundCheckRadius, Vector3.down, out _, groundCheckDistance, groundLayerMask);
+
+    private bool IsSurfaceAngleValid(Collision collision, float maxAngle = 90f)
     {
-        if (groundLayerMask.value == (groundLayerMask.value | 1 << collision.gameObject.layer))
+        foreach (var contact in collision.contacts)
         {
-            isGrounded = false;
-            animHandler.Jump(true);
+            if (Vector3.Angle(contact.normal, Vector3.up) <= maxAngle)
+                return true;
         }
+        return false;
     }
+
+    private bool IsGroundCollision(Collision c) =>
+    (groundLayerMask & (1 << c.gameObject.layer)) != 0;
+
+    private void OnDrawGizmosSelected()
+    {
+        if (groundCheckPoint == null) return;
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(groundCheckPoint.position, groundCheckRadius); // 구체 그리기
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(groundCheckPoint.position, Vector3.down * groundCheckDistance); // SphereCast 방향 그리기
+    }
+
+
 }
