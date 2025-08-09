@@ -51,27 +51,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Infomation",
-                    "type": "Button",
-                    "id": "ed419589-19ac-40df-850d-becae04c258b",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Drop",
                     "type": "Button",
                     "id": "1e711f08-e6fc-43b7-9487-b626e61947bf",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Explore",
-                    "type": "Button",
-                    "id": "703dacd4-dcd3-4ca9-ac71-b2c7b2f947bc",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -216,34 +198,12 @@
                 },
                 {
                     "name": "",
-                    "id": "7df701ad-ef9e-4630-9dce-7517088c5760",
-                    "path": "<Keyboard>/i",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Infomation",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "859f100c-111b-4bfd-9a77-9f625529fb47",
                     "path": "<Keyboard>/g",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Drop",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "057f1a6a-9088-4ebe-a430-c59e4de086d5",
-                    "path": "<Keyboard>/f",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Explore",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

@@ -91,6 +91,7 @@ public class PlayerController : MonoBehaviour
         input = InputManager.Instance;
         uiManager = UIManager.Instance;
 
+        input.InteractAction += Interact; // 인벤토리 상호작용 액션 등록
         input.SelectAction += Select; // 인벤토리 선택 액션 등록
         input.DropAction += Drop; // 인벤토리 드롭 액션 등록
         input.UseAction += Use; // 인벤토리 사용 액션 등록
@@ -106,9 +107,6 @@ public class PlayerController : MonoBehaviour
 
         if (input.JumpInput)
             Jump();
-
-        if (input.InteractInput)
-            Interact();
     }
 
     private void LateUpdate()
