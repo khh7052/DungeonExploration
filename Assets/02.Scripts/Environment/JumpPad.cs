@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class JumpPad : MonoBehaviour
 {
-    public Vector3 jumpDirection = Vector3.up;
-    public float jumpForce = 10f;
+    [SerializeField] private Vector3 jumpDirection = Vector3.up;
+    [SerializeField] private float jumpForce = 10f;
 
     private void OnCollisionEnter(Collision collision)
     {
