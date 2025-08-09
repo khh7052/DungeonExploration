@@ -702,19 +702,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 674898186}
-  obstacleMask:
-    serializedVersion: 2
-    m_Bits: 256
-  distance: 4
   xSpeed: 20
   ySpeed: 20
   yMinLimit: -80
   yMaxLimit: 80
-  zoomSpeed: 50
-  zoomLerpSpeed: 5
+  offset: {x: 0, y: 1.5, z: 0}
+  defaultDistance: 4
   zoomMin: 2
   zoomMax: 10
-  offset: {x: 0, y: 1.5, z: 0}
+  zoomSpeed: 50
+  zoomLerpSpeed: 5
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -3592,8 +3592,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7968992473926613395}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

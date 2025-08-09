@@ -2,74 +2,85 @@ using UnityEngine;
 
 public class ThirdPersonCamera : MonoBehaviour
 {
-    [SerializeField] private Transform target;  // 따라갈 캐릭터
-    [SerializeField] private LayerMask obstacleMask; // 장애물 레이어 마스크
-    [SerializeField] private float initDistance = 4f; // 초기 거리
-    private float currentDistance = 5f;
-    [SerializeField] private float xSpeed = 120f;
-    [SerializeField] private float ySpeed = 120f;
+    [Header("Camera")]
+    [SerializeField] private Transform target;                  // 따라갈 캐릭터 트랜스폼
+    [SerializeField] private float xSpeed = 120f;                // 좌우 회전 속도
+    [SerializeField] private float ySpeed = 120f;                // 상하 회전 속도
+    [SerializeField] private float yMinLimit = -20f;             // 상하 회전 최소 각도
+    [SerializeField] private float yMaxLimit = 80f;              // 상하 회전 최대 각도
+    [SerializeField] private Vector3 offset = new(0, 1.5f, 0); // 캐릭터 기준 카메라 높이 보정
 
-    [SerializeField] private float yMinLimit = -20f;
-    [SerializeField] private float yMaxLimit = 80f;
+    [Header("Zoom")]
+    [SerializeField] private float defaultDistance = 4f;         // 초기 카메라 거리
+    [SerializeField] private float zoomMin = 2f;                 // 최소 줌 거리
+    [SerializeField] private float zoomMax = 10f;                 // 최대 줌 거리
+    [SerializeField] private float zoomSpeed = 2f;               // 줌 속도
+    [SerializeField] private float zoomLerpSpeed = 8f;           // 줌 보간 속도
+    [SerializeField] private LayerMask obstacleMask;             // 장애물 레이어 마스크
 
-    [SerializeField] private float zoomSpeed = 2f; // 줌 속도
-    [SerializeField] private float zoomLerpSpeed = 2f; // 줌 속도
-    [SerializeField] private float zoomMin = 2f; // 최소 줌 거리
-    [SerializeField] private float zoomMax = 10f; // 최대 줌 거리
+    private float currentDistance;                               // 현재 카메라 거리
+    private float targetDistance;                                // 목표 카메라 거리
 
-    [SerializeField] private Vector3 offset = new(0, 1.5f, 0); // 카메라의 높이 조정
-    private float targetDistance; // 현재 목표 거리
+    private float rotationX = 0f;                                // 좌우 회전 각도 (Yaw)
+    private float rotationY = 0f;                                // 상하 회전 각도 (Pitch)
 
-    private float x = 0.0f;
-    private float y = 0.0f;
-
-    void Start()
+    private void Start()
     {
         Vector3 angles = transform.eulerAngles;
-        x = angles.y;
-        y = angles.x;
+        rotationX = angles.y;
+        rotationY = angles.x;
 
-        currentDistance = initDistance;
-        targetDistance = initDistance;
+        currentDistance = defaultDistance;
+        targetDistance = defaultDistance;
     }
+
     private void LateUpdate()
     {
-        currentDistance = Mathf.Lerp(currentDistance, targetDistance, zoomLerpSpeed * Time.deltaTime);
+        SmoothZoom();
+        UpdateCameraPosition();
+    }
 
-        // 위치 및 회전 업데이트 (Rotate 함수 역할 일부 흡수)
-        Quaternion rotation = Quaternion.Euler(y, x, 0);
+    private void SmoothZoom()
+    {
+        currentDistance = Mathf.Lerp(currentDistance, targetDistance, zoomLerpSpeed * Time.deltaTime);
+    }
+
+    private void UpdateCameraPosition()
+    {
+        Quaternion rotation = Quaternion.Euler(rotationY, rotationX, 0f);
         Vector3 desiredPos = target.position + offset - rotation * Vector3.forward * currentDistance;
-        transform.SetPositionAndRotation(AdjustForObstacles(desiredPos), rotation);
+        Vector3 adjustedPos = AdjustForObstacles(target.position + offset, desiredPos);
+
+        transform.SetPositionAndRotation(adjustedPos, rotation);
     }
 
     public void Rotate(float mouseX, float mouseY)
     {
-        x += mouseX * xSpeed * Time.deltaTime;
-        y = Mathf.Clamp(y - mouseY * ySpeed * Time.deltaTime, yMinLimit, yMaxLimit);
+        rotationX += mouseX * xSpeed * Time.deltaTime;
+        rotationY -= mouseY * ySpeed * Time.deltaTime;
+        rotationY = Mathf.Clamp(rotationY, yMinLimit, yMaxLimit);
     }
 
-    public void Zoom(float zoomAmount)
+    public void Zoom(float zoomInput)
     {
-        if (zoomAmount == 0) return;
+        if (Mathf.Approximately(zoomInput, 0f))
+            return;
 
-        zoomAmount = Mathf.Clamp(zoomAmount, -1f, 1f);
-
-        targetDistance -= zoomAmount * zoomSpeed * Time.deltaTime;
+        targetDistance -= zoomInput * zoomSpeed * Time.deltaTime;
         targetDistance = Mathf.Clamp(targetDistance, zoomMin, zoomMax);
     }
 
-
-    private Vector3 AdjustForObstacles(Vector3 desiredPos)
+    private Vector3 AdjustForObstacles(Vector3 fromPos, Vector3 toPos)
     {
-        Vector3 startPos = target.position + offset;
-        Vector3 camDir = desiredPos - startPos;
+        Vector3 direction = toPos - fromPos;
+        float distance = direction.magnitude;
+        direction.Normalize();
 
-        if (Physics.Raycast(startPos, camDir.normalized, out RaycastHit hit, currentDistance, obstacleMask))
+        if (Physics.Raycast(fromPos, direction, out RaycastHit hit, distance, obstacleMask))
         {
-            // 표면에 너무 붙지 않도록 살짝 띄움
-            return hit.point - camDir.normalized * 0.1f;
+            // 카메라가 장애물에 너무 붙지 않도록 살짝 떨어뜨림
+            return hit.point - direction * 0.1f;
         }
-
-        return desiredPos;
+        return toPos;
     }
 }
