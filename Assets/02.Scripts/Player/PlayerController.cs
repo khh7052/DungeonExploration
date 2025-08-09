@@ -237,18 +237,17 @@ public class PlayerController : MonoBehaviour
     }
     
 
-    public void AddItem(ItemData itemData)
+    public bool AddItem(ItemData itemData)
     {
-        if (inventory == null || itemData == null) return;
+        if (inventory == null || itemData == null) return false;
         
         if (inventory.AddItem(itemData))
         {
             Debug.Log($"Added item: {itemData.itemName}");
+            return true;
         }
-        else
-        {
-            Debug.LogWarning("Inventory is full or item could not be added.");
-        }
+
+        return false;
     }
 
     public void Use()
