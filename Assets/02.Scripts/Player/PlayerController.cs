@@ -114,6 +114,7 @@ public class PlayerController : MonoBehaviour
         if (input.JumpInput)
             Jump();
 
+        thirdPersonCamera.Zoom(input.ZoomInput); // 줌 입력 처리
         animHandler.Jump(!isGrounded); // 점프 애니메이션 업데이트
     }
 

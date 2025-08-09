@@ -13,6 +13,7 @@ public class InputManager : Singleton<InputManager>
     public bool FireInput { get; private set; }
     public bool DashInput { get; private set; }
     public int SelectInput { get; private set; }
+    public float ZoomInput { get; private set; }
 
     public event Action InteractAction;
     public event Action<int> SelectAction;
@@ -83,7 +84,6 @@ public class InputManager : Singleton<InputManager>
                 }
             }
         }
-
     }
 
     public void OnOption(InputAction.CallbackContext callback)
@@ -103,4 +103,13 @@ public class InputManager : Singleton<InputManager>
         if (callback.started)
             UseAction?.Invoke();
     }
+
+    public void OnZoom(InputAction.CallbackContext callback)
+    {
+        if (callback.performed)
+            ZoomInput = callback.ReadValue<Vector2>().y / 120f;
+        else if (callback.canceled)
+            ZoomInput = 0f;
+    }
+
 }
