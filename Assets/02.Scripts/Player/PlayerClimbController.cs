@@ -43,7 +43,7 @@ public class PlayerClimbController : MonoBehaviour
             }
             else
             {
-                animHandler.Climb(true);
+                // animHandler.Climb(true);
             }
         }
     }
