@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using Constants;
+using UnityEngine.Timeline;
 
 public class PlayerController : MonoBehaviour
 {
@@ -32,6 +33,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashCooldown = 1f;
     private float lastDashTime = -1f;
     private bool isDashing = false;
+
+    [Header("Climb")]
+    [SerializeField] private float climbForwardCheckDistance = 0.5f; // 클라이밍 체크 거리
+    [SerializeField] private float climbDownCheckDistance = 1f; // 클라이밍 체크 거리
+    [SerializeField] private Vector3 climbDownCheckOffset = new(0, 1f, 0); // 클라이밍 체크 구체 반지름
+    [SerializeField] private Transform climbCheckPoint; // 클라이밍 체크 위치
+    [SerializeField] private LayerMask climbableLayerMask; // 클라이밍 가능한 레이어 마스크
+    private bool isClimbing = false; // 클라이밍 상태
+    private Vector3 climbPoint;
+
 
     [Header("Stats")]
     [SerializeField] private Stat[] initStats;
@@ -81,7 +92,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rigd = GetComponent<Rigidbody>();
-        animHandler = GetComponent<AnimationHandler>();
+        animHandler = GetComponentInChildren<AnimationHandler>();
 
         Cursor.lockState = CursorLockMode.Locked; // 커서를 잠금 상태로 설정
 
@@ -104,18 +115,32 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        isGrounded = CheckGroundObject(); // 매 프레임마다 지면 체크
-        CheckInteractableObject();
-        Move();
+        Debug.Log(isClimbing);
 
-        if(input.DashInput)
-            Dash();
+        if (!isClimbing)
+        {
+            isGrounded = CheckGroundObject(); // 매 프레임마다 지면 체크
+            CheckInteractableObject();
+            Move();
 
-        if (input.JumpInput)
-            Jump();
+            if (input.DashInput)
+                Dash();
+
+            if (input.JumpInput)
+            {
+                if (!ClimbIdle())
+                    Jump();
+            }
+
+            animHandler.Jump(!isGrounded);
+        }
+        else
+        {
+            if (input.JumpInput)
+                ClimbUp();
+        }
 
         thirdPersonCamera.Zoom(input.ZoomInput); // 줌 입력 처리
-        animHandler.Jump(!isGrounded); // 점프 애니메이션 업데이트
     }
 
     private void LateUpdate()
@@ -141,11 +166,54 @@ public class PlayerController : MonoBehaviour
         Vector3 velocity = MoveSpeed * moveDirection;
         velocity.y = rigd.velocity.y;
         rigd.velocity = velocity;
+        Debug.Log($"Move Direction: {moveDirection}, Velocity: {rigd.velocity}");
 
         UpdateForwardDirection();
         UpdateMoveAnimationBlend();
     }
 
+    bool ClimbIdle()
+    {
+        Ray forwardRay = new(climbCheckPoint.position, climbCheckPoint.forward * climbForwardCheckDistance);
+        Ray downRay = new(climbCheckPoint.position + transform.TransformDirection(climbDownCheckOffset), Vector3.down * climbDownCheckDistance);
+
+        bool isForwardHit = Physics.Raycast(forwardRay, out RaycastHit forwardHit, climbForwardCheckDistance, climbableLayerMask);
+        bool isDownHit = Physics.Raycast(downRay, out RaycastHit downHit, climbDownCheckDistance, climbableLayerMask);
+
+        Debug.Log($"Forward Hit: {isForwardHit}, Down Hit: {isDownHit}");
+        if (isForwardHit && isDownHit)
+        {
+            isJumping = false;
+            isClimbing = true; // 클라이밍 조건이 충족되지 않으면 클라이밍 상태 종료
+            animHandler.Jump(false);
+            animHandler.Climb(true);
+            rigd.isKinematic = true; // 클라이밍 중에는 물리 엔진의 영향을 받지 않도록 설정
+            climbPoint = new(forwardHit.point.x, downHit.point.y + 1f, downHit.point.z); // 클라이밍 위치 설정
+            return true;
+        }
+        else
+        {
+            isClimbing = false; // 클라이밍 조건이 충족되지 않으면 클라이밍 상태 종료
+            rigd.isKinematic = false; // 클라이밍이 끝나면 물리 엔진의 영향을 받도록 설정
+            animHandler.Climb(false); // 클라이밍 애니메이션 종료
+        return false;
+        }
+    }
+
+    void ClimbUp()
+    {
+        if (!isClimbing) return;
+
+        // 클라이밍 애니메이션을 트리거로 설정
+        animHandler.Climb(false);
+    }
+
+    public void ClimbUpEnd()
+    {
+        isClimbing = false;
+        rigd.isKinematic = false; // 클라이밍이 끝나면 물리 엔진의 영향을 받도록 설정
+        transform.position = climbPoint; // 클라이밍 위치로 이동
+    }
 
     void UpdateMoveAnimationBlend()
     {
@@ -195,6 +263,7 @@ public class PlayerController : MonoBehaviour
         if (isJumping) return;
         rigd.AddForce(Vector3.up * JumpForce, ForceMode.VelocityChange);
         isJumping = true;
+        animHandler.Jump(true);
     }
 
     public void Look()
@@ -270,6 +339,7 @@ public class PlayerController : MonoBehaviour
     {
         if (CheckGroundObject())
         {
+            animHandler.Jump(false);
             isJumping = false; // 착지 시 점프 상태 초기화
         }
     }
@@ -299,6 +369,16 @@ public class PlayerController : MonoBehaviour
 
         Gizmos.color = Color.red;
         Gizmos.DrawRay(groundCheckPoint.position, Vector3.down * groundCheckDistance); // SphereCast 방향 그리기
+
+        if (climbCheckPoint != null)
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawRay(climbCheckPoint.position, climbCheckPoint.forward * climbForwardCheckDistance); // 클라이밍 체크 전방 방향 그리기
+            Gizmos.DrawRay(climbCheckPoint.position + transform.TransformDirection(climbDownCheckOffset), Vector3.down * climbDownCheckDistance); // 클라이밍 체크 아래 방향 그리기
+
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(climbPoint, 0.5f); // 클라이밍 체크 구체 그리기
+        }
     }
 
 

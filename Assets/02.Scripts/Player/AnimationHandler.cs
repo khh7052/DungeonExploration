@@ -3,11 +3,13 @@ using Constants;
 
 public class AnimationHandler : MonoBehaviour
 {
+    private PlayerController controller;
     private Animator anim;
 
     private void Awake()
     {
         anim = GetComponentInChildren<Animator>();
+        controller = GetComponentInParent<PlayerController>();
     }
 
     public void Jump(bool isJump)
@@ -24,5 +26,16 @@ public class AnimationHandler : MonoBehaviour
     {
         anim.SetBool(AnimatorHash.DashHash, isDashing);
     }
+    public void Climb(bool isClimbing)
+    {
+        anim.SetBool(AnimatorHash.ClimbHash, isClimbing);
+    }
+
+    public void OnClimbUpEnd()
+    {
+        controller.ClimbUpEnd();
+    }
+
+
 
 }
