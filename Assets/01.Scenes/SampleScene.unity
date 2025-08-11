@@ -1331,6 +1331,7 @@ GameObject:
   - component: {fileID: 674898188}
   - component: {fileID: 674898189}
   - component: {fileID: 674898190}
+  - component: {fileID: 674898191}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -1503,6 +1504,25 @@ MonoBehaviour:
   moveAnimLerpSpeed: 10
   wallMinAngle: 45
   wallSlideSpeed: 5
+--- !u!114 &674898191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674898182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e82facc9ad1d49940beb5df93123bc26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  climbForwardCheckDistance: 0.5
+  climbDownCheckDistance: 1
+  climbDownCheckOffset: {x: 0, y: 1, z: 0.5}
+  climbCheckPoint: {fileID: 253606863}
+  climbableLayerMask:
+    serializedVersion: 2
+    m_Bits: 257
 --- !u!1 &716166791
 GameObject:
   m_ObjectHideFlags: 0

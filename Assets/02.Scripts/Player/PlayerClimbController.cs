@@ -7,6 +7,7 @@ public class PlayerClimbController : MonoBehaviour
     [SerializeField] private Vector3 climbDownCheckOffset = new(0, 1f, 0);
     [SerializeField] private Transform climbCheckPoint;
     [SerializeField] private LayerMask climbableLayerMask;
+    [SerializeField] private Vector3 climbPointOffset;
 
     private AnimationHandler animHandler;
     private Rigidbody rigd;
@@ -15,6 +16,8 @@ public class PlayerClimbController : MonoBehaviour
     private Vector3 climbPoint;
 
     private InputManager input;
+
+    public bool IsClimbing => isClimbing;
 
     private void Awake()
     {
@@ -27,16 +30,20 @@ public class PlayerClimbController : MonoBehaviour
     {
         if (!isClimbing)
         {
-            if (TryStartClimbing())
+            if (input.IsMoving)
             {
-                // 클라이밍 시작
+                TryStartClimbing();
             }
         }
         else
         {
-            if (input.JumpInput)
+            if (input.IsMoving)
             {
                 ClimbUp();
+            }
+            else
+            {
+                animHandler.Climb(true);
             }
         }
     }
@@ -55,7 +62,7 @@ public class PlayerClimbController : MonoBehaviour
             animHandler.Climb(true);
             rigd.isKinematic = true;
 
-            climbPoint = new Vector3(forwardHit.point.x, downHit.point.y + 1f, downHit.point.z);
+            climbPoint = new Vector3(forwardHit.point.x, downHit.point.y, forwardHit.point.z) + transform.TransformDirection(climbPointOffset);
             return true;
         }
         return false;
@@ -66,7 +73,6 @@ public class PlayerClimbController : MonoBehaviour
         if (!isClimbing) return;
 
         animHandler.Climb(false);
-        ClimbUpEnd();
     }
 
     public void ClimbUpEnd()

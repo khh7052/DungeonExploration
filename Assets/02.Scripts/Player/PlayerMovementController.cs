@@ -57,13 +57,7 @@ public class PlayerMovementController : MonoBehaviour
         ProcessInput();
 
         if (isDashing)
-        {
             SetVelocityYToZero();
-        }
-        else
-        {
-            ApplyMovement();
-        }
 
         UpdateAnimationStates();
     }
@@ -77,6 +71,9 @@ public class PlayerMovementController : MonoBehaviour
 
         if (CanJump())
             Jump();
+
+        if (CanMove())
+            ApplyMovement();
     }
 
     private void UpdateMoveDirection()
@@ -86,15 +83,16 @@ public class PlayerMovementController : MonoBehaviour
         moveDirection = thirdPersonCamera.transform.TransformDirection(moveDirection);
         moveDirection.y = 0;
     }
+    private bool CanMove() => !isDashing && !playerController.ClimbController.IsClimbing;
 
-    private bool CanJump() => input.JumpInput && isGrounded && !isJumping;
+    private bool CanJump() => input.JumpInput && isGrounded && !isJumping && !playerController.ClimbController.IsClimbing;
 
-    private bool CanDash() => input.DashInput && !isDashing && moveDirection != Vector3.zero && Time.time >= lastDashTime + dashCooldown;
+    private bool CanDash() => input.DashInput && !isDashing && moveDirection != Vector3.zero && Time.time >= lastDashTime + dashCooldown && !playerController.ClimbController.IsClimbing;
 
     private void ApplyMovement()
     {
-        Vector3 desiredVelocity = moveDirection * MoveSpeed;
 
+        Vector3 desiredVelocity = moveDirection * MoveSpeed;
         if (isTouchingWall)
         {
             if (!isGrounded)
@@ -230,7 +228,14 @@ public class PlayerMovementController : MonoBehaviour
         moveAnimBlend = Mathf.Lerp(moveAnimBlend, target, Time.deltaTime * moveAnimLerpSpeed);
         animHandler.MoveSpeed(moveAnimBlend);
 
-        animHandler.Jump(!isGrounded);
+        if (playerController.ClimbController.IsClimbing)
+        {
+            animHandler.Jump(false);
+        }
+        else
+        {
+            animHandler.Jump(!isGrounded);
+        }
         animHandler.Dash(isDashing);
     }
 

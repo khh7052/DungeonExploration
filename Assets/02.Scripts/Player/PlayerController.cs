@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     private PlayerInventoryController inventoryController;
     public PlayerInventoryController InventoryController { get => inventoryController; }
 
+    private PlayerClimbController climbController;
+    public PlayerClimbController ClimbController { get => climbController; }
+
     public float Health
     {
         get => characterStats.GetStat(StatType.CurrentHP).FinalValue;
@@ -18,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         inventoryController = GetComponent<PlayerInventoryController>();
+        climbController = GetComponent<PlayerClimbController>();
         Cursor.lockState = CursorLockMode.Locked;
 
         InitializeStats();
