@@ -26,9 +26,6 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded = true;
     private bool isJumping = false;
 
-    [Header("Look")]
-    [SerializeField] private ThirdPersonCamera thirdPersonCamera;
-
     [Header("Dash")]
     [SerializeField] private float dashCooldown = 1f;
     private float lastDashTime = -1f;
@@ -83,12 +80,15 @@ public class PlayerController : MonoBehaviour
     private PlayerInventoryController inventoryController;
     public PlayerInventoryController InventoryController => inventoryController;
 
+    private PlayerLookController lookController;
+
 
     private void Awake()
     {
         rigd = GetComponent<Rigidbody>();
         animHandler = GetComponentInChildren<AnimationHandler>();
         inventoryController = GetComponent<PlayerInventoryController>();
+        lookController = GetComponent<PlayerLookController>();
 
         Cursor.lockState = CursorLockMode.Locked; // 커서를 잠금 상태로 설정
 
@@ -129,14 +129,8 @@ public class PlayerController : MonoBehaviour
             if (input.JumpInput)
                 ClimbUp();
         }
-
-        thirdPersonCamera.Zoom(input.ZoomInput); // 줌 입력 처리
     }
 
-    private void LateUpdate()
-    {
-        Look();
-    }
     public void Move()
     {
         if (isDashing)
@@ -149,7 +143,7 @@ public class PlayerController : MonoBehaviour
 
         Vector2 moveInput = input.MoveInput;
         moveDirection = new Vector3(moveInput.x, 0, moveInput.y).normalized;
-        moveDirection = thirdPersonCamera.transform.TransformDirection(moveDirection);
+        moveDirection = lookController.CameraTransform.TransformDirection(moveDirection);
         moveDirection.y = 0;
 
         Vector3 velocity = MoveSpeed * moveDirection;
@@ -253,14 +247,6 @@ public class PlayerController : MonoBehaviour
         rigd.AddForce(Vector3.up * JumpForce, ForceMode.VelocityChange);
         isJumping = true;
         animHandler.Jump(true);
-    }
-
-    public void Look()
-    {
-        float mouseX = input.LookInput.x;
-        float mouseY = input.LookInput.y;
-
-        thirdPersonCamera.Rotate(mouseX, mouseY);
     }
 
     private void OnCollisionEnter(Collision collision)

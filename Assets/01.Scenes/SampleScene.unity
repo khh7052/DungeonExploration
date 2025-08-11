@@ -1329,6 +1329,7 @@ GameObject:
   - component: {fileID: 674898185}
   - component: {fileID: 674898187}
   - component: {fileID: 674898188}
+  - component: {fileID: 674898189}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -1406,7 +1407,6 @@ MonoBehaviour:
   groundCheckDistance: 0.3
   forwardDirectionLerpSpeed: 10
   moveAnimLerpSpeed: 20
-  thirdPersonCamera: {fileID: 330585548}
   dashCooldown: 1
   climbForwardCheckDistance: 0.5
   climbDownCheckDistance: 1
@@ -1483,6 +1483,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 1134591954}
   dropTransform: {fileID: 965327053}
+--- !u!114 &674898189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674898182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e840ef841345ac4a8604b11148f9e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thirdPersonCamera: {fileID: 330585548}
 --- !u!1 &716166791
 GameObject:
   m_ObjectHideFlags: 0
