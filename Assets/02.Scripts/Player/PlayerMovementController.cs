@@ -52,7 +52,7 @@ public class PlayerMovementController : MonoBehaviour
 
     private void Update()
     {
-        isGrounded = CheckGround();
+        isGrounded = IsGrounded();
 
         ProcessInput();
 
@@ -164,7 +164,7 @@ public class PlayerMovementController : MonoBehaviour
         animHandler.Jump(!isGrounded);
     }
 
-    private bool CheckGround()
+    private bool IsGrounded()
     {
         if (Physics.SphereCast(groundCheckPoint.position, groundCheckRadius, Vector3.down, out RaycastHit hit, groundCheckDistance, groundLayerMask))
         {
@@ -183,7 +183,7 @@ public class PlayerMovementController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (CheckGround())
+        if (IsGrounded())
         {
             animHandler.Jump(false);
             isJumping = false;
