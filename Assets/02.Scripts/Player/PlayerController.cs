@@ -48,11 +48,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Stat[] initStats;
     public CharacterStats characterStats;
 
-    [Header("Interact")]
-    [SerializeField] private float interactDistance = 3f; // 상호작용 거리
-    [SerializeField] private LayerMask interactableLayerMask; // 상호작용 가능한 레이어 마스크
-    private IInteractable currentInteractable; // 현재 상호작용 가능한 객체
-
     [Header("Inventory")]
     [SerializeField] private Inventory inventory;
     [SerializeField] private Transform dropTransform;
@@ -107,7 +102,6 @@ public class PlayerController : MonoBehaviour
         input = InputManager.Instance;
         uiManager = UIManager.Instance;
 
-        input.InteractAction += Interact; // 인벤토리 상호작용 액션 등록
         input.SelectAction += Select; // 인벤토리 선택 액션 등록
         input.DropAction += Drop; // 인벤토리 드롭 액션 등록
         input.UseAction += Use; // 인벤토리 사용 액션 등록
@@ -120,7 +114,6 @@ public class PlayerController : MonoBehaviour
         if (!isClimbing)
         {
             isGrounded = CheckGroundObject(); // 매 프레임마다 지면 체크
-            CheckInteractableObject();
             Move();
 
             if (input.DashInput)
@@ -146,7 +139,6 @@ public class PlayerController : MonoBehaviour
     private void LateUpdate()
     {
         Look();
-        UpdatePromptText();
     }
     public void Move()
     {
@@ -274,13 +266,6 @@ public class PlayerController : MonoBehaviour
         thirdPersonCamera.Rotate(mouseX, mouseY);
     }
 
-    public void Interact()
-    {
-        if (currentInteractable == null) return;
-        currentInteractable.Interact(this);
-        currentInteractable = null; // 상호작용 후 초기화
-    }
-
     public void Select(int inputNumber)
     {
         if (inventory == null) return;
@@ -288,33 +273,6 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Drop() => inventory.Drop(dropTransform.position);
-
-    void UpdatePromptText()
-    {
-        HUD hud = uiManager.HUD;
-
-        if (currentInteractable != null)
-            hud.UpdatePromptText(currentInteractable.GetPrompt());
-        else
-            hud.UpdatePromptText("");
-    }
-
-    void CheckInteractableObject()
-    {
-        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)); // 카메라 중앙 위치
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, interactDistance, interactableLayerMask))
-        {
-            IInteractable interactable = hit.collider.GetComponent<IInteractable>();
-            if (interactable != null)
-                currentInteractable = interactable; // 현재 상호작용 가능한 객체 설정
-            else
-                currentInteractable = null; // 상호작용 가능한 객체가 없으면 초기화
-        }
-        else
-            currentInteractable = null; // 레이캐스트에 맞는 객체가 없으면 초기화
-    }
-    
 
     public bool AddItem(ItemData itemData)
     {
