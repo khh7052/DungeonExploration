@@ -33,7 +33,7 @@ public class AnimationHandler : MonoBehaviour
 
     public void OnClimbUpEnd()
     {
-        controller.ClimbUpEnd();
+        // controller.ClimbUpEnd();
     }
 
 

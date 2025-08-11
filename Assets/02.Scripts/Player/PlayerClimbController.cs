@@ -75,4 +75,19 @@ public class PlayerClimbController : MonoBehaviour
         rigd.isKinematic = false;
         transform.position = climbPoint;
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        
+        if (climbCheckPoint != null)
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawRay(climbCheckPoint.position, climbCheckPoint.forward * climbForwardCheckDistance); // 클라이밍 체크 전방 방향 그리기
+            Gizmos.DrawRay(climbCheckPoint.position + transform.TransformDirection(climbDownCheckOffset), Vector3.down * climbDownCheckDistance); // 클라이밍 체크 아래 방향 그리기
+
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(climbPoint, 0.5f); // 클라이밍 체크 구체 그리기
+        }
+        
+    }
 }
