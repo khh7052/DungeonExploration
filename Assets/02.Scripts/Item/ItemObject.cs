@@ -27,7 +27,7 @@ public class ItemObject : MonoBehaviour, IInteractable
 
     public void Interact(PlayerController controller)
     {
-        if (controller.AddItem(itemData))
+        if (controller.InventoryController.AddItem(itemData))
             gameObject.SetActive(false);
     }
 

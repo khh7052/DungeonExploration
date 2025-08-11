@@ -48,10 +48,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Stat[] initStats;
     public CharacterStats characterStats;
 
-    [Header("Inventory")]
-    [SerializeField] private Inventory inventory;
-    [SerializeField] private Transform dropTransform;
-
     public int Health
     {
         get => (int)characterStats.GetStat(StatType.CurrentHP).FinalValue;
@@ -84,10 +80,15 @@ public class PlayerController : MonoBehaviour
         set => characterStats.GetStat(StatType.DashDuration).SetBaseValue(value);
     }
 
+    private PlayerInventoryController inventoryController;
+    public PlayerInventoryController InventoryController => inventoryController;
+
+
     private void Awake()
     {
         rigd = GetComponent<Rigidbody>();
         animHandler = GetComponentInChildren<AnimationHandler>();
+        inventoryController = GetComponent<PlayerInventoryController>();
 
         Cursor.lockState = CursorLockMode.Locked; // 커서를 잠금 상태로 설정
 
@@ -101,10 +102,6 @@ public class PlayerController : MonoBehaviour
     {
         input = InputManager.Instance;
         uiManager = UIManager.Instance;
-
-        input.SelectAction += Select; // 인벤토리 선택 액션 등록
-        input.DropAction += Drop; // 인벤토리 드롭 액션 등록
-        input.UseAction += Use; // 인벤토리 사용 액션 등록
     }
 
     private void Update()
@@ -264,33 +261,6 @@ public class PlayerController : MonoBehaviour
         float mouseY = input.LookInput.y;
 
         thirdPersonCamera.Rotate(mouseX, mouseY);
-    }
-
-    public void Select(int inputNumber)
-    {
-        if (inventory == null) return;
-        inventory.SelectItemSlot(inputNumber - 1);
-    }
-
-    public void Drop() => inventory.Drop(dropTransform.position);
-
-    public bool AddItem(ItemData itemData)
-    {
-        if (inventory == null || itemData == null) return false;
-        
-        if (inventory.AddItem(itemData))
-        {
-            Debug.Log($"Added item: {itemData.itemName}");
-            return true;
-        }
-
-        return false;
-    }
-
-    public void Use()
-    {
-        if (inventory == null) return;
-        inventory.Use(characterStats);
     }
 
     private void OnCollisionEnter(Collision collision)

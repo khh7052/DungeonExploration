@@ -1328,6 +1328,7 @@ GameObject:
   - component: {fileID: 674898183}
   - component: {fileID: 674898185}
   - component: {fileID: 674898187}
+  - component: {fileID: 674898188}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -1433,8 +1434,6 @@ MonoBehaviour:
   - type: 7
     baseValue: 0.1
     modifiers: []
-  inventory: {fileID: 1134591954}
-  dropTransform: {fileID: 965327053}
 --- !u!4 &674898186
 Transform:
   m_ObjectHideFlags: 0
@@ -1466,10 +1465,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f70028a1c3c2f428a68d1c3a5ac213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 3
+  interactRange: 3
   interactableLayerMask:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &674898188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674898182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cc4dbadc5222944687902349ce34d2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 1134591954}
+  dropTransform: {fileID: 965327053}
 --- !u!1 &716166791
 GameObject:
   m_ObjectHideFlags: 0

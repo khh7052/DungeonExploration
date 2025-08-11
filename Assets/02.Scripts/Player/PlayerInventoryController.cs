@@ -6,12 +6,12 @@ public class PlayerInventoryController : MonoBehaviour
     [SerializeField] private Transform dropTransform;
 
     private InputManager input;
-    private CharacterStats characterStats;
+    private PlayerController playerController;
 
     private void Awake()
     {
         input = InputManager.Instance;
-        characterStats = GetComponent<PlayerController>().characterStats;
+        playerController = GetComponent<PlayerController>();
 
         input.SelectAction += Select;
         input.DropAction += Drop;
@@ -44,6 +44,6 @@ public class PlayerInventoryController : MonoBehaviour
     private void Use()
     {
         if (inventory == null) return;
-        inventory.Use(characterStats);
+        inventory.Use(playerController.characterStats);
     }
 }
