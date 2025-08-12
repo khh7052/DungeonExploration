@@ -172,6 +172,7 @@ public class PlayerMovementController : MonoBehaviour
     public void SpawnFootstepEffect()
     {
         if (!isGrounded || footstepEffect == null) return;
+        if(moveDirection == Vector3.zero) return;
 
         AudioManager.Instance.PlaySFX(footstepSFX);
         ObjectPoolingManager.Instance.Get(footstepEffect, groundCheckPoint.position);

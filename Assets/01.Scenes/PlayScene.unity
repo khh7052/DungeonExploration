@@ -1509,7 +1509,7 @@ MonoBehaviour:
   groundCheckDistance: 0.3
   footstepEffect: {fileID: 3739132922946767385, guid: 27cf9faa32ffd494dbb0d88b12b00481,
     type: 3}
-  footstepSFX: {fileID: 0}
+  footstepSFX: {fileID: 11400000, guid: 96adee2eb8f8f834e9c834e6630b64fe, type: 2}
   forwardDirectionLerpSpeed: 15
   moveAnimLerpSpeed: 10
   jumpEffect: {fileID: 7987366436221376086, guid: 8103c6923b2bfc64baeb6e354310b632,
