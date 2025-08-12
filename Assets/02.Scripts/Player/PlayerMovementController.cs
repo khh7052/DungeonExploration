@@ -170,7 +170,7 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (!isGrounded || footstepEffect == null) return;
 
-        Instantiate(footstepEffect, groundCheckPoint.position, Quaternion.identity);
+        ObjectPoolingManager.Instance.Get(footstepEffect, groundCheckPoint.position);
     }
 
     private void Jump()
@@ -181,9 +181,7 @@ public class PlayerMovementController : MonoBehaviour
         animHandler.Jump(true);
 
         if (jumpEffect != null)
-        {
-            Instantiate(jumpEffect, transform.position, Quaternion.identity);
-        }
+            ObjectPoolingManager.Instance.Get(jumpEffect, transform.position);
     }
 
     private void Dash()
@@ -195,9 +193,7 @@ public class PlayerMovementController : MonoBehaviour
         rigd.AddForce(moveDirection * DashForce, ForceMode.VelocityChange);
 
         if (dashEffect != null)
-        {
-            Instantiate(dashEffect, transform.position, Quaternion.LookRotation(moveDirection));
-        }
+            ObjectPoolingManager.Instance.Get(dashEffect, transform.position, Quaternion.LookRotation(moveDirection));
 
         StartCoroutine(EndDashAfterDelay());
         animHandler.Dash(true);

@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T instance;
-    [SerializeField] private bool onDestroyDontDestroy = true;
+    [SerializeField] private bool dontDestroyOnLoad = true;
 
     public static T Instance
     {
@@ -29,8 +27,9 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         if (instance == null)
         {
             instance = this as T;
+            Initialize();
 
-            if (onDestroyDontDestroy)
+            if (dontDestroyOnLoad)
                 DontDestroyOnLoad(gameObject);
         }
         else if (instance != this)
@@ -39,11 +38,11 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         }
     }
 
+    protected virtual void Initialize() { }
+
     protected virtual void OnDestroy()
     {
         if (instance == this)
-        {
             instance = null;
-        }
     }
 }
