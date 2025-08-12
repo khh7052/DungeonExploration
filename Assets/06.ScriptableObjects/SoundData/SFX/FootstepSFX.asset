@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FootstepSFX
   m_EditorClassIdentifier: 
   clips: []
-  volume: 1
+  volume: 0.5
   soundType: 1
