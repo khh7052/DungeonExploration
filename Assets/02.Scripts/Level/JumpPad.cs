@@ -22,8 +22,9 @@ public class JumpPad : MonoBehaviour
             Vector3 force = jumpDirection.normalized * jumpForce;
             anim.SetTrigger(AnimatorHash.BounceHash);
 
-            if (collision.gameObject.TryGetComponent(out PlayerMovementController player))
+            if (collision.gameObject.CompareTag("Player"))
             {
+                PlayerMovementController player = collision.gameObject.GetComponent<PlayerMovementController>();
                 player.AddExternalVelocity(force, forceMode);
             }
             else

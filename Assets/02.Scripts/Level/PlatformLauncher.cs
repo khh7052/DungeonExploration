@@ -28,7 +28,17 @@ public class PlatformLauncher : MonoBehaviour
 
         anim.SetTrigger(AnimatorHash.LaunchHash); // 애니메이션 트리거 설정
         foreach (var rigidbody in targetRigidbodies)
-            rigidbody.AddForce(launchDirection.normalized * launchForce, ForceMode.VelocityChange);
+        {
+            if (rigidbody.CompareTag("Player"))
+            {
+                PlayerMovementController playerController = rigidbody.GetComponent<PlayerMovementController>();
+                playerController.AddExternalVelocity(launchDirection.normalized * launchForce, ForceMode.VelocityChange);
+            }
+            else
+            {
+                rigidbody.AddForce(launchDirection.normalized * launchForce, ForceMode.VelocityChange);
+            }
+        }
 
         targetRigidbodies.Clear(); // 발사 후 대상 목록 초기화
         isLaunching = false; // 발사 완료 후 상태 초기화

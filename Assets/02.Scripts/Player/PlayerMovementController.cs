@@ -9,6 +9,7 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private Transform groundCheckPoint;
     [SerializeField] private float groundCheckRadius = 0.3f;
     [SerializeField] private float groundCheckDistance = 0.2f;
+    private Vector3 groundNormal;
 
     [SerializeField] private float forwardDirectionLerpSpeed = 2f;
     [SerializeField] private float moveAnimLerpSpeed = 2f;
@@ -112,14 +113,23 @@ public class PlayerMovementController : MonoBehaviour
     {
         Vector3 desiredVelocity = moveDirection * MoveSpeed;
 
-        if (isTouchingWall && !isGrounded)
+        if (isGrounded)
         {
-            Vector3 slideDirection = Vector3.Cross(wallNormal, Vector3.Cross(Vector3.down, wallNormal)).normalized;
-            desiredVelocity = slideDirection * wallSlideSpeed;
+            // Vector3 dir = Vector3.ProjectOnPlane(desiredVelocity, groundNormal); // 땅의 법선에 수직인 방향으로 이동
+            // desiredVelocity = dir.normalized * MoveSpeed;
+            desiredVelocity.y = rigd.velocity.y; // 기존 Y속도 유지
         }
         else
         {
-            desiredVelocity.y = rigd.velocity.y; // 기존 Y속도 유지
+            if (isTouchingWall)
+            {
+                Vector3 slideDirection = Vector3.Cross(wallNormal, Vector3.Cross(Vector3.down, wallNormal)).normalized;
+                desiredVelocity = slideDirection * wallSlideSpeed;
+            }
+            else
+            {
+                desiredVelocity.y = rigd.velocity.y; // 기존 Y속도 유지
+            }
         }
 
         // 최종 속도 = 이동 속도 + 외부 속도
@@ -154,6 +164,7 @@ public class PlayerMovementController : MonoBehaviour
 
     private void Jump()
     {
+        // AddExternalVelocity(Vector3.up * JumpForce, ForceMode.VelocityChange);
         rigd.AddForce(Vector3.up * JumpForce, ForceMode.VelocityChange);
         isJumping = true;
         animHandler.Jump(true);
@@ -204,6 +215,7 @@ public class PlayerMovementController : MonoBehaviour
         {
             animHandler.Jump(false);
             isJumping = false;
+            groundNormal = collision.GetContact(0).normal;
         }
     }
 
