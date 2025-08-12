@@ -41,10 +41,6 @@ public class PlayerClimbController : MonoBehaviour
             {
                 ClimbUp();
             }
-            else
-            {
-                // animHandler.Climb(true);
-            }
         }
     }
 
@@ -62,7 +58,7 @@ public class PlayerClimbController : MonoBehaviour
             animHandler.Climb(true);
             rigd.isKinematic = true;
 
-            climbPoint = new Vector3(forwardHit.point.x, downHit.point.y, forwardHit.point.z) + transform.TransformDirection(climbPointOffset);
+            climbPoint = new Vector3(downHit.point.x, downHit.point.y, downHit.point.z) + transform.TransformDirection(climbPointOffset);
             return true;
         }
         return false;

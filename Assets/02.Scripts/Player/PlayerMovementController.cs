@@ -52,6 +52,7 @@ public class PlayerMovementController : MonoBehaviour
 
     private void Update()
     {
+        if(playerController.ClimbController.IsClimbing) return;
         isGrounded = IsGrounded();
 
         ProcessInput();
@@ -64,6 +65,8 @@ public class PlayerMovementController : MonoBehaviour
 
     private void ProcessInput()
     {
+        if (playerController.ClimbController.IsClimbing) return;
+
         UpdateMoveDirection();
 
         if (CanDash())
@@ -83,11 +86,11 @@ public class PlayerMovementController : MonoBehaviour
         moveDirection = thirdPersonCamera.transform.TransformDirection(moveDirection);
         moveDirection.y = 0;
     }
-    private bool CanMove() => !isDashing && !playerController.ClimbController.IsClimbing;
+    private bool CanMove() => !isDashing;
 
-    private bool CanJump() => input.JumpInput && isGrounded && !isJumping && !playerController.ClimbController.IsClimbing;
+    private bool CanJump() => input.JumpInput && isGrounded && !isJumping;
 
-    private bool CanDash() => input.DashInput && !isDashing && moveDirection != Vector3.zero && Time.time >= lastDashTime + dashCooldown && !playerController.ClimbController.IsClimbing;
+    private bool CanDash() => input.DashInput && !isDashing && moveDirection != Vector3.zero && Time.time >= lastDashTime + dashCooldown;
 
     private void ApplyMovement()
     {
@@ -181,6 +184,8 @@ public class PlayerMovementController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (playerController.ClimbController.IsClimbing) return;
+
         if (IsGrounded())
         {
             animHandler.Jump(false);
@@ -190,6 +195,8 @@ public class PlayerMovementController : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
+        if (playerController.ClimbController.IsClimbing) return;
+
         // 벽 접촉 임시 플래그
         bool touchingWallThisFrame = false;
         Vector3 detectedWallNormal = Vector3.zero;
@@ -218,6 +225,7 @@ public class PlayerMovementController : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
+        if (playerController.ClimbController.IsClimbing) return;
         isTouchingWall = false;
         wallNormal = Vector3.zero;
     }
