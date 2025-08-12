@@ -1511,6 +1511,8 @@ MonoBehaviour:
     type: 3}
   forwardDirectionLerpSpeed: 10
   moveAnimLerpSpeed: 10
+  jumpEffect: {fileID: 7987366436221376086, guid: 8103c6923b2bfc64baeb6e354310b632,
+    type: 3}
   dashEffect: {fileID: 8576660324902780283, guid: 200b82f64b18d074e8ac04e2be195d50,
     type: 3}
   wallMinAngle: 45
@@ -33183,6 +33185,79 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &4863633131643107514
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6515745554648936680, guid: 8103c6923b2bfc64baeb6e354310b632,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515745554648936680, guid: 8103c6923b2bfc64baeb6e354310b632,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515745554648936680, guid: 8103c6923b2bfc64baeb6e354310b632,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515745554648936680, guid: 8103c6923b2bfc64baeb6e354310b632,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515745554648936680, guid: 8103c6923b2bfc64baeb6e354310b632,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515745554648936680, guid: 8103c6923b2bfc64baeb6e354310b632,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515745554648936680, guid: 8103c6923b2bfc64baeb6e354310b632,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515745554648936680, guid: 8103c6923b2bfc64baeb6e354310b632,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515745554648936680, guid: 8103c6923b2bfc64baeb6e354310b632,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515745554648936680, guid: 8103c6923b2bfc64baeb6e354310b632,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987366436221376086, guid: 8103c6923b2bfc64baeb6e354310b632,
+        type: 3}
+      propertyPath: m_Name
+      value: JumpEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987366436221376086, guid: 8103c6923b2bfc64baeb6e354310b632,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8103c6923b2bfc64baeb6e354310b632, type: 3}
 --- !u!1 &4881329303951536748
 GameObject:
   m_ObjectHideFlags: 0
@@ -41856,3 +41931,4 @@ SceneRoots:
   - {fileID: 1375465837}
   - {fileID: 4453299473947457951}
   - {fileID: 980488561}
+  - {fileID: 4863633131643107514}

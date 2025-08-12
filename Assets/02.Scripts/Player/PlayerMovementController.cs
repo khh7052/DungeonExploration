@@ -28,6 +28,8 @@ public class PlayerMovementController : MonoBehaviour
     private bool isJumping = false;
     private bool isDashing = false;
 
+    // 점프
+    [SerializeField] private GameObject jumpEffect;
 
     // 대쉬
     [SerializeField] private GameObject dashEffect;
@@ -177,6 +179,11 @@ public class PlayerMovementController : MonoBehaviour
         rigd.AddForce(Vector3.up * JumpForce, ForceMode.VelocityChange);
         isJumping = true;
         animHandler.Jump(true);
+
+        if (jumpEffect != null)
+        {
+            Instantiate(jumpEffect, transform.position, Quaternion.identity);
+        }
     }
 
     private void Dash()
@@ -189,7 +196,7 @@ public class PlayerMovementController : MonoBehaviour
 
         if (dashEffect != null)
         {
-            GameObject effect = Instantiate(dashEffect, transform.position, Quaternion.LookRotation(moveDirection));
+            Instantiate(dashEffect, transform.position, Quaternion.LookRotation(moveDirection));
         }
 
         StartCoroutine(EndDashAfterDelay());
@@ -227,6 +234,7 @@ public class PlayerMovementController : MonoBehaviour
 
         if (IsGrounded())
         {
+            SpawnFootstepEffect();
             animHandler.Jump(false);
             isJumping = false;
             groundNormal = collision.GetContact(0).normal;
