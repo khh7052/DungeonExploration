@@ -1,17 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Constants;
 
 public class PlatformLauncher : MonoBehaviour
 {
     [SerializeField] private Vector3 launchDirection;
     [SerializeField] private float launchForce = 20f;
     [SerializeField] private float launchDelay = 0.5f;
+    private Animator anim;
     private List<Rigidbody> targetRigidbodies;
     private bool isLaunching = false;
 
-    private void Start()
+    private void Awake()
     {
+        anim = GetComponent<Animator>();
         targetRigidbodies = new();
     }
 
@@ -19,9 +22,11 @@ public class PlatformLauncher : MonoBehaviour
     {
         if (isLaunching) yield break; // 이미 발사 중이거나 대상이 없으면 종료
         isLaunching = true; // 발사 시작 상태 설정
+        anim.SetTrigger(AnimatorHash.LaunchReadyHash); // 애니메이션 트리거 설정
 
         yield return new WaitForSeconds(launchDelay);
 
+        anim.SetTrigger(AnimatorHash.LaunchHash); // 애니메이션 트리거 설정
         foreach (var rigidbody in targetRigidbodies)
             rigidbody.AddForce(launchDirection.normalized * launchForce, ForceMode.VelocityChange);
 

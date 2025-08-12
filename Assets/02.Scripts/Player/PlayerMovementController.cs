@@ -4,6 +4,7 @@ using Constants;
 
 public class PlayerMovementController : MonoBehaviour
 {
+    // 플레이어 이동
     [SerializeField] private LayerMask groundLayerMask;
     [SerializeField] private Transform groundCheckPoint;
     [SerializeField] private float groundCheckRadius = 0.3f;
@@ -24,15 +25,21 @@ public class PlayerMovementController : MonoBehaviour
     private bool isGrounded = true;
     private bool isJumping = false;
     private bool isDashing = false;
+    
 
+    // 대쉬
     private float dashCooldown = 1f;
     private float lastDashTime = -1f;
 
-    // 벽 충돌 관련
+    // 벽 충돌
     private bool isTouchingWall = false;
     private Vector3 wallNormal = Vector3.zero;
     [SerializeField] private float wallMinAngle = 45f; // 벽으로 간주하는 최소 각도
     [SerializeField] private float wallSlideSpeed = 5f; // 초당 하강 속도
+
+    // 외부 속도 적용
+    private Vector3 externalVelocity = Vector3.zero;
+    [SerializeField] private float externalVelocityDecay = 5f; // 초당 감속 속도
 
     CharacterStats CharacterStats => playerController.characterStats;
 
@@ -60,13 +67,14 @@ public class PlayerMovementController : MonoBehaviour
         if (isDashing)
             SetVelocityYToZero();
 
+        DecayExternalVelocity();
         UpdateAnimationStates();
+
+        Debug.Log($"Velocity {rigd.velocity}, External Velocity: {externalVelocity}");
     }
 
     private void ProcessInput()
     {
-        if (playerController.ClimbController.IsClimbing) return;
-
         UpdateMoveDirection();
 
         if (CanDash())
@@ -92,42 +100,48 @@ public class PlayerMovementController : MonoBehaviour
 
     private bool CanDash() => input.DashInput && !isDashing && moveDirection != Vector3.zero && Time.time >= lastDashTime + dashCooldown;
 
+    private void DecayExternalVelocity()
+    {
+        if (externalVelocity.magnitude > 0.01f)
+            externalVelocity = Vector3.Lerp(externalVelocity, Vector3.zero, Time.deltaTime * externalVelocityDecay);
+        else
+            externalVelocity = Vector3.zero;
+    }
+
     private void ApplyMovement()
     {
-
         Vector3 desiredVelocity = moveDirection * MoveSpeed;
-        if (isTouchingWall)
-        {
-            if (!isGrounded)
-            {
-                Debug.Log("Sliding down wall");
-                // 벽면 아래쪽으로 미끄러지는 방향 계산
-                Vector3 slideDirection = Vector3.Cross(wallNormal, Vector3.Cross(Vector3.down, wallNormal)).normalized;
-                Vector3 slideVelocity = slideDirection * wallSlideSpeed;
-                rigd.velocity = slideVelocity;
-                UpdateForwardRotation();
-                return;
-            }
-            else
-            {
-                // 공중이 아니거나 상승 중일 때 Y속도 유지
-                desiredVelocity.y = rigd.velocity.y;
 
-                // 벽 미끄러짐 끝났으면 벽 상태 해제
-                if (isGrounded)
-                {
-                    isTouchingWall = false;
-                    wallNormal = Vector3.zero;
-                }
-            }
+        if (isTouchingWall && !isGrounded)
+        {
+            Vector3 slideDirection = Vector3.Cross(wallNormal, Vector3.Cross(Vector3.down, wallNormal)).normalized;
+            desiredVelocity = slideDirection * wallSlideSpeed;
         }
         else
         {
-            desiredVelocity.y = rigd.velocity.y;
+            desiredVelocity.y = rigd.velocity.y; // 기존 Y속도 유지
         }
 
-        rigd.velocity = desiredVelocity;
+        // 최종 속도 = 이동 속도 + 외부 속도
+        rigd.velocity = desiredVelocity + externalVelocity;
+
         UpdateForwardRotation();
+    }
+
+    // 외부에서 호출해 발사 속도 적용
+    public void AddExternalVelocity(Vector3 force, ForceMode mode = ForceMode.VelocityChange)
+    {
+        if (mode == ForceMode.VelocityChange)
+            externalVelocity += force;
+        else
+            externalVelocity += force / rigd.mass;
+
+        externalVelocity.y = 0;
+
+        // y 속도가 중첩되지 않도록 한번만 더하도록 설정
+        Vector3 v = rigd.velocity;
+        v.y += force.y;
+        rigd.velocity = v;
     }
 
     private void UpdateForwardRotation()
