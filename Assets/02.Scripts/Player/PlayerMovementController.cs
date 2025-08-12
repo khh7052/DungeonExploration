@@ -12,6 +12,7 @@ public class PlayerMovementController : MonoBehaviour
     private Vector3 groundNormal;
 
     [SerializeField] private GameObject footstepEffect;
+    [SerializeField] private SoundData footstepSFX;
     [SerializeField] private float forwardDirectionLerpSpeed = 2f;
     [SerializeField] private float moveAnimLerpSpeed = 2f;
 
@@ -30,9 +31,11 @@ public class PlayerMovementController : MonoBehaviour
 
     // 점프
     [SerializeField] private GameObject jumpEffect;
+    [SerializeField] private SoundData jumpSFX;
 
     // 대쉬
     [SerializeField] private GameObject dashEffect;
+    [SerializeField] private SoundData dashSFX;
     private float dashCooldown = 1f;
     private float lastDashTime = -1f;
 
@@ -170,15 +173,16 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (!isGrounded || footstepEffect == null) return;
 
+        AudioManager.Instance.PlaySFX(footstepSFX);
         ObjectPoolingManager.Instance.Get(footstepEffect, groundCheckPoint.position);
     }
 
     private void Jump()
     {
-        // AddExternalVelocity(Vector3.up * JumpForce, ForceMode.VelocityChange);
         rigd.AddForce(Vector3.up * JumpForce, ForceMode.VelocityChange);
         isJumping = true;
         animHandler.Jump(true);
+        AudioManager.Instance.PlaySFX(jumpSFX);
 
         if (jumpEffect != null)
             ObjectPoolingManager.Instance.Get(jumpEffect, transform.position);
@@ -197,6 +201,7 @@ public class PlayerMovementController : MonoBehaviour
 
         StartCoroutine(EndDashAfterDelay());
         animHandler.Dash(true);
+        AudioManager.Instance.PlaySFX(dashSFX);
     }
 
     private IEnumerator EndDashAfterDelay()

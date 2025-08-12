@@ -790,51 +790,6 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 257
---- !u!1 &351280030
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 351280032}
-  - component: {fileID: 351280031}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &351280031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 351280030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0a03262abb40e441b9178e4b9aa9461, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dontDestroyOnLoad: 1
---- !u!4 &351280032
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 351280030}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,12 +1509,15 @@ MonoBehaviour:
   groundCheckDistance: 0.3
   footstepEffect: {fileID: 3739132922946767385, guid: 27cf9faa32ffd494dbb0d88b12b00481,
     type: 3}
-  forwardDirectionLerpSpeed: 10
-  moveAnimLerpSpeed: 20
+  footstepSFX: {fileID: 0}
+  forwardDirectionLerpSpeed: 15
+  moveAnimLerpSpeed: 10
   jumpEffect: {fileID: 7987366436221376086, guid: 8103c6923b2bfc64baeb6e354310b632,
     type: 3}
+  jumpSFX: {fileID: 11400000, guid: d72bf6c45813e054a83c175b62f20fd4, type: 2}
   dashEffect: {fileID: 8576660324902780283, guid: 200b82f64b18d074e8ac04e2be195d50,
     type: 3}
+  dashSFX: {fileID: 11400000, guid: 190c1df16376a0843937174f3c12ae8d, type: 2}
   wallMinAngle: 45
   wallSlideSpeed: 5
   externalVelocityDecay: 5
@@ -41977,4 +41935,3 @@ SceneRoots:
   - {fileID: 4453299473947457951}
   - {fileID: 980488561}
   - {fileID: 4863633131643107514}
-  - {fileID: 351280032}

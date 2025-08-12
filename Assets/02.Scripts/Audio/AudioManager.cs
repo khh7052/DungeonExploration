@@ -48,6 +48,8 @@ public class AudioManager : Singleton<AudioManager>
 
     public void PlayBGM(AudioClip clip, float volume = 1f)
     {
+        if(clip == null) return;
+
         if (bgmSource.isPlaying)
             bgmSource.Stop();
 
@@ -66,6 +68,8 @@ public class AudioManager : Singleton<AudioManager>
 
     public void PlaySFX(AudioClip clip, float volume = 1f)
     {
+        if (clip == null) return;
+
         sfxSource.PlayOneShot(clip, volume);
     }
 
