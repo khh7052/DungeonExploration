@@ -790,6 +790,51 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 257
+--- !u!1 &351280030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 351280032}
+  - component: {fileID: 351280031}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &351280031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351280030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0a03262abb40e441b9178e4b9aa9461, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dontDestroyOnLoad: 1
+--- !u!4 &351280032
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351280030}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -7129,7 +7174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4c5abff14cda1f4486da4531c530f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onDestroyDontDestroy: 1
+  dontDestroyOnLoad: 1
   playerController: {fileID: 674898185}
   respawnPoint: {fileID: 0}
   respawnHeight: -10
@@ -9037,7 +9082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edb29837e16f1924d93ce1223d86d96e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onDestroyDontDestroy: 1
+  dontDestroyOnLoad: 1
   hud: {fileID: 2122178502}
 --- !u!4 &1933232077
 Transform:
@@ -9292,7 +9337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ee3f1e187b6bb44861159f2f0f7fa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onDestroyDontDestroy: 1
+  dontDestroyOnLoad: 1
 --- !u!4 &1940484072
 Transform:
   m_ObjectHideFlags: 0
@@ -41932,3 +41977,4 @@ SceneRoots:
   - {fileID: 4453299473947457951}
   - {fileID: 980488561}
   - {fileID: 4863633131643107514}
+  - {fileID: 351280032}

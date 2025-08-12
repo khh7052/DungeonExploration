@@ -32,6 +32,12 @@ namespace Constants
         Multiplicative, // x1.2
     }
 
+    public enum SoundType
+    {
+        BGM,
+        SFX,
+    }
+
     public static class AnimatorHash
     {
         // Player
