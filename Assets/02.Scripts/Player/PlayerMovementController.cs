@@ -11,6 +11,7 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private float groundCheckDistance = 0.2f;
     private Vector3 groundNormal;
 
+    [SerializeField] private GameObject footstepEffect;
     [SerializeField] private float forwardDirectionLerpSpeed = 2f;
     [SerializeField] private float moveAnimLerpSpeed = 2f;
 
@@ -161,6 +162,13 @@ public class PlayerMovementController : MonoBehaviour
 
         Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, forwardDirectionLerpSpeed * Time.deltaTime);
+    }
+
+    public void SpawnFootstepEffect()
+    {
+        if (!isGrounded || footstepEffect == null) return;
+
+        Instantiate(footstepEffect, groundCheckPoint.position, Quaternion.identity);
     }
 
     private void Jump()

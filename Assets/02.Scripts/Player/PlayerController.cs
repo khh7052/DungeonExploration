@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     private PlayerClimbController climbController;
     public PlayerClimbController ClimbController { get => climbController; }
 
+    private PlayerMovementController movementController;
+    public PlayerMovementController MovementController { get => movementController; }
+
     public float Health
     {
         get => characterStats.GetStat(StatType.CurrentHP).FinalValue;
@@ -22,6 +25,8 @@ public class PlayerController : MonoBehaviour
     {
         inventoryController = GetComponent<PlayerInventoryController>();
         climbController = GetComponent<PlayerClimbController>();
+        movementController = GetComponent<PlayerMovementController>();
+
         Cursor.lockState = CursorLockMode.Locked;
 
         InitializeStats();

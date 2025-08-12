@@ -36,6 +36,11 @@ public class AnimationHandler : MonoBehaviour
         controller.ClimbController.ClimbUpEnd();
     }
 
+    public void OnFootStep()
+    {
+        controller.MovementController.SpawnFootstepEffect();
+    }
+
 
 
 }
