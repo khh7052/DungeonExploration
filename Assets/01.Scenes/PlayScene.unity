@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15896629, g: 0.5175354, b: 1.0392404, a: 1}
+  m_IndirectSpecularColor: {r: 0.1618376, g: 0.65176505, b: 1.5333972, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1510,7 +1510,7 @@ MonoBehaviour:
   footstepEffect: {fileID: 3739132922946767385, guid: 27cf9faa32ffd494dbb0d88b12b00481,
     type: 3}
   forwardDirectionLerpSpeed: 10
-  moveAnimLerpSpeed: 15
+  moveAnimLerpSpeed: 20
   jumpEffect: {fileID: 7987366436221376086, guid: 8103c6923b2bfc64baeb6e354310b632,
     type: 3}
   dashEffect: {fileID: 8576660324902780283, guid: 200b82f64b18d074e8ac04e2be195d50,
