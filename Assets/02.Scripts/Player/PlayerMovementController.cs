@@ -26,9 +26,10 @@ public class PlayerMovementController : MonoBehaviour
     private bool isGrounded = true;
     private bool isJumping = false;
     private bool isDashing = false;
-    
+
 
     // ´ë½¬
+    [SerializeField] private GameObject dashEffect;
     private float dashCooldown = 1f;
     private float lastDashTime = -1f;
 
@@ -177,6 +178,11 @@ public class PlayerMovementController : MonoBehaviour
 
         rigd.velocity = Vector3.zero;
         rigd.AddForce(moveDirection * DashForce, ForceMode.VelocityChange);
+
+        if (dashEffect != null)
+        {
+            GameObject effect = Instantiate(dashEffect, transform.position, Quaternion.LookRotation(moveDirection));
+        }
 
         StartCoroutine(EndDashAfterDelay());
         animHandler.Dash(true);
