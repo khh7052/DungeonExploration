@@ -1510,7 +1510,7 @@ MonoBehaviour:
   footstepEffect: {fileID: 3739132922946767385, guid: 27cf9faa32ffd494dbb0d88b12b00481,
     type: 3}
   forwardDirectionLerpSpeed: 10
-  moveAnimLerpSpeed: 10
+  moveAnimLerpSpeed: 15
   jumpEffect: {fileID: 7987366436221376086, guid: 8103c6923b2bfc64baeb6e354310b632,
     type: 3}
   dashEffect: {fileID: 8576660324902780283, guid: 200b82f64b18d074e8ac04e2be195d50,
@@ -7788,8 +7788,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC810\uD504\nSPACE"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 11322d15c3bb9c548b11e16c88d63e2f, type: 2}
-  m_sharedMaterial: {fileID: -1506848228975657961, guid: 11322d15c3bb9c548b11e16c88d63e2f,
+  m_fontAsset: {fileID: 11400000, guid: 6912daf8ede59d94b86a5ca02173fd16, type: 2}
+  m_sharedMaterial: {fileID: -1406608174398136595, guid: 6912daf8ede59d94b86a5ca02173fd16,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -7820,7 +7820,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -8790,8 +8790,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC774\uB3D9\nWASD"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 11322d15c3bb9c548b11e16c88d63e2f, type: 2}
-  m_sharedMaterial: {fileID: -1506848228975657961, guid: 11322d15c3bb9c548b11e16c88d63e2f,
+  m_fontAsset: {fileID: 11400000, guid: 6912daf8ede59d94b86a5ca02173fd16, type: 2}
+  m_sharedMaterial: {fileID: -1406608174398136595, guid: 6912daf8ede59d94b86a5ca02173fd16,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -8822,7 +8822,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
