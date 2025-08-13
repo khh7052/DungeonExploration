@@ -8,6 +8,7 @@ public class PlatformLauncher : MonoBehaviour
     [SerializeField] private Vector3 launchDirection;
     [SerializeField] private float launchForce = 20f;
     [SerializeField] private float launchDelay = 0.5f;
+    [SerializeField] private SoundData bounceSFX;
     private Animator anim;
     private List<Rigidbody> targetRigidbodies;
     private bool isLaunching = false;
@@ -27,16 +28,21 @@ public class PlatformLauncher : MonoBehaviour
         yield return new WaitForSeconds(launchDelay);
 
         anim.SetTrigger(AnimatorHash.LaunchHash); // 애니메이션 트리거 설정
+        AudioManager.Instance.PlaySFX(bounceSFX);
+
+        Vector3 dir = transform.TransformDirection(launchDirection.normalized);
+        Vector3 force = dir * launchForce;
+
         foreach (var rigidbody in targetRigidbodies)
         {
             if (rigidbody.CompareTag("Player"))
             {
                 PlayerMovementController playerController = rigidbody.GetComponent<PlayerMovementController>();
-                playerController.AddExternalVelocity(launchDirection.normalized * launchForce, ForceMode.VelocityChange);
+                playerController.AddExternalVelocity(force, ForceMode.VelocityChange);
             }
             else
             {
-                rigidbody.AddForce(launchDirection.normalized * launchForce, ForceMode.VelocityChange);
+                rigidbody.AddForce(force, ForceMode.VelocityChange);
             }
         }
 

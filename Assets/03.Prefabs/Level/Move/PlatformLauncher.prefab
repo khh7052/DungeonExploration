@@ -143,3 +143,4 @@ MonoBehaviour:
   launchDirection: {x: 0, y: 1, z: 0}
   launchForce: 20
   launchDelay: 1
+  bounceSFX: {fileID: 11400000, guid: ef2d3dcb92bcd51498483b007b7808cf, type: 2}
