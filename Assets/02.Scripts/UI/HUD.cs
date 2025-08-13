@@ -9,6 +9,7 @@ public class HUD : BaseUI
 {
     private PlayerController playerController;
     [SerializeField] private Image hpFillImage;
+    [SerializeField] private Image dashFillImage;
     [SerializeField] private TMP_Text promptText;
     [SerializeField] private TMP_Text descriptionText;
 
@@ -16,6 +17,7 @@ public class HUD : BaseUI
     {
         playerController = FindObjectOfType<PlayerController>();
         playerController.characterStats.GetStat(StatType.CurrentHP).FinalValueChanged += UpdateHP;
+        playerController.MovementController.DashAction += StartDashFill;
 
         UpdateHP(playerController.Health);
     }
@@ -28,6 +30,27 @@ public class HUD : BaseUI
         float fillAmount = finalValue / maxHealth;
         hpFillImage.fillAmount = fillAmount;
     }
+
+    void StartDashFill()
+    {
+        StartCoroutine(DashFill());
+    }
+
+    IEnumerator DashFill()
+    {
+        dashFillImage.fillAmount = 0f;
+        float cooldown = playerController.DashCooldown;
+        float elapsedTime = 0f;
+        while (elapsedTime < cooldown)
+        {
+            elapsedTime += Time.deltaTime;
+            dashFillImage.fillAmount = Mathf.Clamp01(elapsedTime / cooldown);
+            yield return null;
+        }
+
+        dashFillImage.fillAmount = 1f;
+    }
+
 
     public void UpdatePromptText(string text)
     {

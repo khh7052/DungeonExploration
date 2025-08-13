@@ -24,7 +24,8 @@ namespace Constants
         MoveSpeed,
         JumpForce,
         DashForce,
-        DashDuration
+        DashDuration,
+        DashCooldown,
     }
     public enum ModifierType
     {

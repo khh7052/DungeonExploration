@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using Constants;
+using System;
 
 public class PlayerMovementController : MonoBehaviour
 {
@@ -34,9 +35,9 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private SoundData jumpSFX;
 
     // 대쉬
+    public event Action DashAction;
     [SerializeField] private GameObject dashEffect;
     [SerializeField] private SoundData dashSFX;
-    private float dashCooldown = 1f;
     private float lastDashTime = -1f;
 
     // 벽 충돌
@@ -105,7 +106,7 @@ public class PlayerMovementController : MonoBehaviour
 
     private bool CanJump() => input.JumpInput && isGrounded && !isJumping;
 
-    private bool CanDash() => input.DashInput && !isDashing && moveDirection != Vector3.zero && Time.time >= lastDashTime + dashCooldown;
+    private bool CanDash() => input.DashInput && !isDashing && moveDirection != Vector3.zero && Time.time >= lastDashTime + playerController.DashCooldown;
 
     private void DecayExternalVelocity()
     {
@@ -202,6 +203,7 @@ public class PlayerMovementController : MonoBehaviour
         StartCoroutine(EndDashAfterDelay());
         animHandler.Dash(true);
         AudioManager.Instance.PlaySFX(dashSFX);
+        DashAction?.Invoke();
     }
 
     private IEnumerator EndDashAfterDelay()

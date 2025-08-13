@@ -23,14 +23,13 @@ public class PlayerController : MonoBehaviour, IDamageable
     private PlayerMovementController movementController;
     public PlayerMovementController MovementController { get => movementController; }
 
-    public float Health
-    {
-        get => characterStats.GetStat(StatType.CurrentHP).FinalValue;
-    }
-    public float MaxHealth
-    {
-        get => characterStats.GetStat(StatType.MaxHP).FinalValue;
-    }
+    public float Health { get => characterStats.GetStat(StatType.CurrentHP).FinalValue; }
+    public float MaxHealth { get => characterStats.GetStat(StatType.MaxHP).FinalValue; }
+
+    public float DashDuration { get => characterStats.GetStat(StatType.DashDuration).FinalValue; }
+
+    public float DashCooldown { get => characterStats.GetStat(StatType.DashCooldown).FinalValue; }
+
 
     private void Awake()
     {
