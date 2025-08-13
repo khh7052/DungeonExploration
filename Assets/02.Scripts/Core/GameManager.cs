@@ -9,6 +9,9 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private Vector3 respawnPoint;
     [SerializeField] private float respawnHeight = -10.0f;
 
+    [SerializeField] private GameObject saveEffect;
+    [SerializeField] private SoundData saveSFX;
+
     private void Start()
     {
         AudioManager.Instance.PlayBGM(bgm);
@@ -24,7 +27,14 @@ public class GameManager : Singleton<GameManager>
 
     bool HasFallenBelowRespawnHeight() => playerController.transform.position.y <= respawnHeight;
 
-    public void SetRespawnPoint(Vector3 newRespawn) => respawnPoint = newRespawn;
+    public void SetRespawnPoint(Vector3 newRespawn)
+    {
+        respawnPoint = newRespawn;
+        if (saveEffect != null)
+            ObjectPoolingManager.Instance.Get(saveEffect, respawnPoint, Quaternion.identity);
+        if (saveSFX != null)
+            AudioManager.Instance.PlaySFX(saveSFX);
+    }
 
     void Respawn()
     {
