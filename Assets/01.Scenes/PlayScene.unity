@@ -7134,6 +7134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 1
   playerController: {fileID: 674898185}
+  bgm: {fileID: 11400000, guid: b0e1a12ab68f3024b85b1d11dda80a93, type: 2}
   respawnPoint: {fileID: 0}
   respawnHeight: -10
 --- !u!4 &1130053941

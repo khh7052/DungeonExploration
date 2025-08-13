@@ -5,10 +5,16 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     [SerializeField] private PlayerController playerController;
+    [SerializeField] private SoundData bgm;
     [SerializeField] private Transform respawnPoint;
     [SerializeField] private float respawnHeight = -10.0f;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        AudioManager.Instance.PlayBGM(bgm);
+    }
+
+
     void Update()
     {
         if (HasFallenBelowRespawnHeight())
