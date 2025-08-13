@@ -28,22 +28,9 @@ public class PlayerClimbController : MonoBehaviour
 
     private void Update()
     {
+        isClimbing = TryStartClimbing();
         rigd.isKinematic = IsClimbing;
-
-        if (!isClimbing)
-        {
-            if (input.IsMoving)
-            {
-                TryStartClimbing();
-            }
-        }
-        else
-        {
-            if (input.IsMoving)
-            {
-                ClimbUp();
-            }
-        }
+        animHandler.Climb(IsClimbing);
     }
 
     private bool TryStartClimbing()
@@ -56,27 +43,16 @@ public class PlayerClimbController : MonoBehaviour
 
         if (isForwardHit && isDownHit)
         {
-            isClimbing = true;
-            animHandler.Climb(true);
-            rigd.isKinematic = true;
-
             climbPoint = new Vector3(downHit.point.x, downHit.point.y, downHit.point.z) + transform.TransformDirection(climbPointOffset);
             return true;
         }
         return false;
     }
 
-    private void ClimbUp()
-    {
-        animHandler.Climb(false);
-    }
-
     public void ClimbUpEnd()
     {
-        isClimbing = false;
-        rigd.isKinematic = false;
         rigd.MovePosition(climbPoint); // 클라이밍이 끝나면 플레이어를 클라이밍 포인트로 이동
-        // transform.position = climbPoint;
+        transform.position = climbPoint;
     }
 
     private void OnDrawGizmosSelected()
