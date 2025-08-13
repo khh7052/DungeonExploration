@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54fc6ce144104f648b62a73b998148ab, type: 3}
-  m_Name: MoveSpeedItemData_Equip
+  m_Name: MoveSpeedItemData_Use
   m_EditorClassIdentifier: 
-  itemName: "\uBB34\uAC70\uC6B4 \uB9DD\uD1A0"
-  itemDescription: "\uBCF4\uAE30\uBCF4\uB2E4 \uBB34\uAC70\uC6B4 \uB9DD\uD1A0\uB2E4\n\uC7A5\uCC29/\uD574\uC81C
-    C"
-  itemIcon: {fileID: 8287165777748813492, guid: 215687feeab0b7445b4a1cd86c82c2e1,
+  itemName: "\uBBFC\uCCA9\uD568\uC758 \uB9DD\uD1A0"
+  itemDescription: "\uBB3C\uACE0\uAE30\uC758 \uAE30\uC6B4\uC744 \uC5BB\uC5B4 \uC7A0\uC2DC
+    \uB3D9\uC548 \uBE68\uB77C\uC9C4\uB2E4.\n\uC0AC\uC6A9 C"
+  itemIcon: {fileID: -8478562381375844705, guid: 215687feeab0b7445b4a1cd86c82c2e1,
     type: 3}
   itemPrefab: {fileID: 1131939199183868711, guid: b98e01ae7fb29f543b8efdce81f48a4e,
     type: 3}
-  isEquippable: 1
+  isEquippable: 0
   statModifiers:
-  - {fileID: 11400000, guid: 341ec1c3cb7754d459a46a34b346029d, type: 2}
+  - {fileID: 11400000, guid: 03f41e55853f40a428b6445069428a26, type: 2}

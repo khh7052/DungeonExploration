@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: DashItemData_Use
   m_EditorClassIdentifier: 
   itemName: "\uAC80\uC740\uC0C9 \uBB3C"
-  itemDescription: "\uC7A0\uC2DC\uB3D9\uC548 \uB300\uC26C\uAC00 \uAC15\uD654\uB41C\uB2E4."
+  itemDescription: "\uC7A0\uC2DC\uB3D9\uC548 \uB300\uC26C\uC758 \uC9C0\uC18D\uC2DC\uAC04\uC774
+    \uAC15\uD654\uB41C\uB2E4.\n\uC0AC\uC6A9 C"
   itemIcon: {fileID: -2217656884674354197, guid: 215687feeab0b7445b4a1cd86c82c2e1,
     type: 3}
   itemPrefab: {fileID: 1131939199183868711, guid: b98e01ae7fb29f543b8efdce81f48a4e,

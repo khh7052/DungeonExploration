@@ -15,14 +15,7 @@ public class ItemObject : MonoBehaviour, IInteractable
     public ItemData ItemData
     {
         get => itemData;
-        set
-        {
-            itemData = value;
-            if (itemData != null)
-            {
-                itemData.itemPrefab = gameObject;
-            }
-        }
+        set => itemData = value;
     }
 
     public void Interact(PlayerController controller)
