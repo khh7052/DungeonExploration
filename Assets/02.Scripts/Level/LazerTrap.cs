@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LazerTrap : MonoBehaviour
 {
-    public Action OnTrapped;
+    public UnityEvent<IDamageable> OnTrapped;
     [SerializeField] private float rayDistance = 5f;
     private LineRenderer lineRenderer;
     private bool isTrapped = false;
@@ -25,7 +26,8 @@ public class LazerTrap : MonoBehaviour
             if (!isTrapped)
             {
                 isTrapped = true;
-                OnTrapped?.Invoke();
+                IDamageable damageable = hit.rigidbody.GetComponent<IDamageable>();
+                OnTrapped?.Invoke(damageable);
             }
             lineRenderer.SetPosition(0, transform.position);
             lineRenderer.SetPosition(1, hit.point);
