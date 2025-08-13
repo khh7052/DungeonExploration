@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Constants;
+using UnityEngine.UI;
 
 public class HUD : BaseUI
 {
     private PlayerController playerController;
-    [SerializeField] private TMP_Text hpText;
+    [SerializeField] private Image hpFillImage;
     [SerializeField] private TMP_Text promptText;
     [SerializeField] private TMP_Text descriptionText;
 
@@ -21,8 +22,11 @@ public class HUD : BaseUI
 
     public void UpdateHP(float finalValue)
     {
-        if (hpText == null) return;
-        hpText.text = "HP: " + finalValue.ToString();
+        if (hpFillImage == null) return;
+
+        float maxHealth = playerController.MaxHealth;
+        float fillAmount = finalValue / maxHealth;
+        hpFillImage.fillAmount = fillAmount;
     }
 
     public void UpdatePromptText(string text)

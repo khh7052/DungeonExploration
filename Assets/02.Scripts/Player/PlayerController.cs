@@ -23,6 +23,10 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         get => characterStats.GetStat(StatType.CurrentHP).FinalValue;
     }
+    public float MaxHealth
+    {
+        get => characterStats.GetStat(StatType.MaxHP).FinalValue;
+    }
 
     private void Awake()
     {
