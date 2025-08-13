@@ -8,6 +8,7 @@ public class JumpPad : MonoBehaviour
     [SerializeField] private Vector3 jumpDirection = Vector3.up;
     [SerializeField] private float jumpForce = 10f;
     [SerializeField] private ForceMode forceMode = ForceMode.Impulse;
+    [SerializeField] private SoundData bounceSFX;
     private Animator anim;
 
     private void Awake()
@@ -21,6 +22,7 @@ public class JumpPad : MonoBehaviour
         {
             Vector3 force = jumpDirection.normalized * jumpForce;
             anim.SetTrigger(AnimatorHash.BounceHash);
+            AudioManager.Instance.PlaySFX(bounceSFX);
 
             if (collision.gameObject.CompareTag("Player"))
             {
