@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Constants;
 public class GameManager : Singleton<GameManager>
 {
     [SerializeField] private PlayerController playerController;
@@ -40,7 +40,8 @@ public class GameManager : Singleton<GameManager>
     {
         if (playerController == null || respawnPoint == null) return;
         playerController.RigidBody.MovePosition(respawnPoint);
-        playerController.RigidBody.velocity = Vector3.zero; // 클라이밍 후 속도를 0으로 설정
+        playerController.RigidBody.velocity = Vector3.zero;
+        playerController.characterStats.GetStat(StatType.CurrentHP).SetBaseValue(5);
         // playerController.transform.position = respawnPoint;
     }
 }

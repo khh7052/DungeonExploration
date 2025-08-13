@@ -54,7 +54,6 @@ public class PlayerController : MonoBehaviour, IDamageable
         characterStats.GetStat(StatType.CurrentHP).SetBaseValue(Health - damage);
         if (Health <= 0)
         {
-            characterStats.GetStat(StatType.CurrentHP).SetBaseValue(5);
             GameManager.Instance.Respawn();
         }
     }
