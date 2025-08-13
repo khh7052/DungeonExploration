@@ -192,6 +192,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LazerTrap (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 6654122730075934217, guid: 1962e434f8d68974983459742954a60d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -221,6 +226,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: platform-overhang (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8884287210815037907, guid: 933ed6dfd8e3ae742af23af8000d727a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8983093112467811508, guid: 933ed6dfd8e3ae742af23af8000d727a,
         type: 3}
@@ -361,6 +371,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: block-grass-corner-low (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7400940923023888910, guid: c78a99e2972ad4646b38af846062ccf7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -439,6 +454,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LazerTrap (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654122730075934217, guid: 1962e434f8d68974983459742954a60d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -519,6 +539,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LazerTrap (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 6654122730075934217, guid: 1962e434f8d68974983459742954a60d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -592,6 +617,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: spike-block (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7604793741548686470, guid: 0fecfef077fa55844b3fa57905ca3679,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -887,6 +917,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 563516974082045343, guid: ed2b130b6c6802f47942003a45f27958,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6694107483094089466, guid: ed2b130b6c6802f47942003a45f27958,
         type: 3}
       propertyPath: damage
@@ -976,6 +1011,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: JumpPad
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691382709855594945, guid: 83ee852d8f6c1fd489ca3051fe696aa3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9155367155405031933, guid: 83ee852d8f6c1fd489ca3051fe696aa3,
         type: 3}
@@ -1189,6 +1229,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: spike-block (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7604793741548686470, guid: 0fecfef077fa55844b3fa57905ca3679,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1432,6 +1477,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -1778,10 +1828,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2992618461199471826, guid: f1e1018488da9c2418b8e6a43bfc3128,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7545325163572500328, guid: f1e1018488da9c2418b8e6a43bfc3128,
         type: 3}
       propertyPath: m_Name
       value: flowers (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545325163572500328, guid: f1e1018488da9c2418b8e6a43bfc3128,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8817243107141705367, guid: f1e1018488da9c2418b8e6a43bfc3128,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9120663720597007000, guid: f1e1018488da9c2418b8e6a43bfc3128,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2241,6 +2311,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: JumpPad (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4691382709855594945, guid: 83ee852d8f6c1fd489ca3051fe696aa3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9155367155405031933, guid: 83ee852d8f6c1fd489ca3051fe696aa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2398,6 +2473,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: block-grass-low-large (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2518,6 +2598,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: block-grass-low-large (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2606,6 +2691,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: spike-block-wide (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004854370460467006, guid: fc557bece03380148acf3853a8aa9ac4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8983130925979806501, guid: fc557bece03380148acf3853a8aa9ac4,
         type: 3}
@@ -2735,6 +2825,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LazerTrap (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654122730075934217, guid: 1962e434f8d68974983459742954a60d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2906,6 +3001,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -3308,6 +3408,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: block-grass-low-large (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -3397,6 +3502,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: block-grass-overhang-large-tall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4675965692597013171, guid: 6dfb61f3c2a130a41aef9cd070c1a959,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6295570334947069943, guid: 6dfb61f3c2a130a41aef9cd070c1a959,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -3480,6 +3590,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -3575,6 +3690,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -3839,6 +3959,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: spike-block (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7604793741548686470, guid: 0fecfef077fa55844b3fa57905ca3679,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3998,6 +4123,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 563516974082045343, guid: ed2b130b6c6802f47942003a45f27958,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6694107483094089466, guid: ed2b130b6c6802f47942003a45f27958,
         type: 3}
       propertyPath: damage
@@ -4076,6 +4206,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ItemSpawner (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138697450812616052, guid: a3f6ab7b6dc8f6c4d934e8bca22d8e9f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107158212799422932, guid: a3f6ab7b6dc8f6c4d934e8bca22d8e9f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4972392975714630472, guid: a3f6ab7b6dc8f6c4d934e8bca22d8e9f,
         type: 3}
@@ -4291,6 +4431,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -4605,7 +4750,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &497002109
 Transform:
@@ -4813,6 +4958,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LazerTrap (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 6654122730075934217, guid: 1962e434f8d68974983459742954a60d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4901,6 +5051,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CheckPoint (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535655280687019017, guid: e6c1e824f33053b49922be856825df4a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4991,6 +5146,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: block-grass-corner-low (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7400940923023888910, guid: c78a99e2972ad4646b38af846062ccf7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5014,6 +5174,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -5103,6 +5268,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -5364,6 +5534,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: block-grass-low-large (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -5452,6 +5627,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -5780,6 +5960,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: spike-block (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7604793741548686470, guid: 0fecfef077fa55844b3fa57905ca3679,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5803,6 +5988,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: flowers-tall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218095974199584428, guid: aa6e6a21340db4647bbe1e049bc20a57,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6161392477559543134, guid: aa6e6a21340db4647bbe1e049bc20a57,
         type: 3}
@@ -5877,6 +6067,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 563516974082045343, guid: ed2b130b6c6802f47942003a45f27958,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6694107483094089466, guid: ed2b130b6c6802f47942003a45f27958,
         type: 3}
@@ -6043,6 +6238,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LazerTrap (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 6654122730075934217, guid: 1962e434f8d68974983459742954a60d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6066,6 +6266,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: platform-overhang (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8884287210815037907, guid: 933ed6dfd8e3ae742af23af8000d727a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8983093112467811508, guid: 933ed6dfd8e3ae742af23af8000d727a,
         type: 3}
@@ -6141,6 +6346,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: block-grass-overhang-large-tall
       objectReference: {fileID: 0}
+    - target: {fileID: 4675965692597013171, guid: 6dfb61f3c2a130a41aef9cd070c1a959,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6295570334947069943, guid: 6dfb61f3c2a130a41aef9cd070c1a959,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6208,6 +6418,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-overhang-large-tall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675965692597013171, guid: 6dfb61f3c2a130a41aef9cd070c1a959,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6295570334947069943, guid: 6dfb61f3c2a130a41aef9cd070c1a959,
         type: 3}
@@ -6293,6 +6508,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: flowers-tall (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5218095974199584428, guid: aa6e6a21340db4647bbe1e049bc20a57,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6161392477559543134, guid: aa6e6a21340db4647bbe1e049bc20a57,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6366,6 +6586,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: spike-block-wide (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004854370460467006, guid: fc557bece03380148acf3853a8aa9ac4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8983130925979806501, guid: fc557bece03380148acf3853a8aa9ac4,
         type: 3}
@@ -6548,7 +6773,7 @@ Transform:
   m_GameObject: {fileID: 674898182}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 645.03, y: 108.67, z: 34.3}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6666,6 +6891,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: platform-overhang (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8884287210815037907, guid: 933ed6dfd8e3ae742af23af8000d727a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8983093112467811508, guid: 933ed6dfd8e3ae742af23af8000d727a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6739,6 +6969,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -6829,6 +7064,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: platform-overhang (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8884287210815037907, guid: 933ed6dfd8e3ae742af23af8000d727a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8983093112467811508, guid: 933ed6dfd8e3ae742af23af8000d727a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6908,6 +7148,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -6997,6 +7242,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -7446,6 +7696,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: block-grass-corner-low (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7400940923023888910, guid: c78a99e2972ad4646b38af846062ccf7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7469,6 +7724,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -7624,6 +7884,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: block-grass-corner-low (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7400940923023888910, guid: c78a99e2972ad4646b38af846062ccf7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7647,6 +7912,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 563516974082045343, guid: ed2b130b6c6802f47942003a45f27958,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6694107483094089466, guid: ed2b130b6c6802f47942003a45f27958,
         type: 3}
@@ -7726,6 +7996,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlatformLauncher
+      objectReference: {fileID: 0}
+    - target: {fileID: 2147818541246635183, guid: 6c5d2d7a2aaa7cd4e8ea55f68b1f4fd9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2410726039093993203, guid: 6c5d2d7a2aaa7cd4e8ea55f68b1f4fd9,
         type: 3}
@@ -8209,6 +8484,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CheckPoint (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8535655280687019017, guid: e6c1e824f33053b49922be856825df4a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8232,6 +8512,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: flowers-tall (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218095974199584428, guid: aa6e6a21340db4647bbe1e049bc20a57,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6161392477559543134, guid: aa6e6a21340db4647bbe1e049bc20a57,
         type: 3}
@@ -8306,6 +8591,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: spike-block-wide (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004854370460467006, guid: fc557bece03380148acf3853a8aa9ac4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8983130925979806501, guid: fc557bece03380148acf3853a8aa9ac4,
         type: 3}
@@ -8581,6 +8871,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: block-grass-corner-low (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7400940923023888910, guid: c78a99e2972ad4646b38af846062ccf7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8609,7 +8904,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!1001 &877413644
 PrefabInstance:
@@ -8623,6 +8918,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -8789,6 +9089,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 563516974082045343, guid: ed2b130b6c6802f47942003a45f27958,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6694107483094089466, guid: ed2b130b6c6802f47942003a45f27958,
         type: 3}
       propertyPath: damage
@@ -8867,6 +9172,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -9147,6 +9457,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LazerTrap (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6654122730075934217, guid: 1962e434f8d68974983459742954a60d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9226,6 +9541,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LazerTrap (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6654122730075934217, guid: 1962e434f8d68974983459742954a60d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9249,6 +9569,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 563516974082045343, guid: ed2b130b6c6802f47942003a45f27958,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6694107483094089466, guid: ed2b130b6c6802f47942003a45f27958,
         type: 3}
@@ -9390,6 +9715,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LazerTrap (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 6654122730075934217, guid: 1962e434f8d68974983459742954a60d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9454,6 +9784,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: platform-overhang (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8884287210815037907, guid: 933ed6dfd8e3ae742af23af8000d727a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8983093112467811508, guid: 933ed6dfd8e3ae742af23af8000d727a,
         type: 3}
@@ -14657,6 +14992,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LazerTrap (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 6654122730075934217, guid: 1962e434f8d68974983459742954a60d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14746,6 +15086,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CheckPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 8535655280687019017, guid: e6c1e824f33053b49922be856825df4a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14763,6 +15108,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-overhang-large-tall (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675965692597013171, guid: 6dfb61f3c2a130a41aef9cd070c1a959,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6295570334947069943, guid: 6dfb61f3c2a130a41aef9cd070c1a959,
         type: 3}
@@ -14903,6 +15253,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LazerTrap (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6654122730075934217, guid: 1962e434f8d68974983459742954a60d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14957,6 +15312,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: spike-block-wide (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004854370460467006, guid: fc557bece03380148acf3853a8aa9ac4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8983130925979806501, guid: fc557bece03380148acf3853a8aa9ac4,
         type: 3}
@@ -15097,6 +15457,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CheckPoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8535655280687019017, guid: e6c1e824f33053b49922be856825df4a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15120,6 +15485,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ItemSpawner (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138697450812616052, guid: a3f6ab7b6dc8f6c4d934e8bca22d8e9f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107158212799422932, guid: a3f6ab7b6dc8f6c4d934e8bca22d8e9f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4972392975714630472, guid: a3f6ab7b6dc8f6c4d934e8bca22d8e9f,
         type: 3}
@@ -15424,10 +15799,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2992618461199471826, guid: f1e1018488da9c2418b8e6a43bfc3128,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7545325163572500328, guid: f1e1018488da9c2418b8e6a43bfc3128,
         type: 3}
       propertyPath: m_Name
       value: flowers (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545325163572500328, guid: f1e1018488da9c2418b8e6a43bfc3128,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8817243107141705367, guid: f1e1018488da9c2418b8e6a43bfc3128,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9120663720597007000, guid: f1e1018488da9c2418b8e6a43bfc3128,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15587,6 +15982,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: arrow (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699703887371374464, guid: 6c0c60faf0c0c3044a1cafa9c931ebdc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6656459288612452493, guid: 6c0c60faf0c0c3044a1cafa9c931ebdc,
         type: 3}
@@ -15782,6 +16182,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: block-grass-low-large (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -15921,6 +16326,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: spike-block (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7604793741548686470, guid: 0fecfef077fa55844b3fa57905ca3679,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16009,6 +16419,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CheckPoint (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535655280687019017, guid: e6c1e824f33053b49922be856825df4a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16214,10 +16629,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2992618461199471826, guid: f1e1018488da9c2418b8e6a43bfc3128,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7545325163572500328, guid: f1e1018488da9c2418b8e6a43bfc3128,
         type: 3}
       propertyPath: m_Name
       value: flowers (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545325163572500328, guid: f1e1018488da9c2418b8e6a43bfc3128,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8817243107141705367, guid: f1e1018488da9c2418b8e6a43bfc3128,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9120663720597007000, guid: f1e1018488da9c2418b8e6a43bfc3128,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16478,10 +16913,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2992618461199471826, guid: f1e1018488da9c2418b8e6a43bfc3128,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7545325163572500328, guid: f1e1018488da9c2418b8e6a43bfc3128,
         type: 3}
       propertyPath: m_Name
       value: flowers (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545325163572500328, guid: f1e1018488da9c2418b8e6a43bfc3128,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8817243107141705367, guid: f1e1018488da9c2418b8e6a43bfc3128,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9120663720597007000, guid: f1e1018488da9c2418b8e6a43bfc3128,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16562,6 +17017,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LazerTrap (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6654122730075934217, guid: 1962e434f8d68974983459742954a60d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16585,6 +17045,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 563516974082045343, guid: ed2b130b6c6802f47942003a45f27958,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6694107483094089466, guid: ed2b130b6c6802f47942003a45f27958,
         type: 3}
@@ -16665,6 +17130,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 563516974082045343, guid: ed2b130b6c6802f47942003a45f27958,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6694107483094089466, guid: ed2b130b6c6802f47942003a45f27958,
         type: 3}
       propertyPath: damage
@@ -16743,6 +17213,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 563516974082045343, guid: ed2b130b6c6802f47942003a45f27958,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6694107483094089466, guid: ed2b130b6c6802f47942003a45f27958,
         type: 3}
@@ -16958,6 +17433,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: block-grass-overhang-large-tall (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4675965692597013171, guid: 6dfb61f3c2a130a41aef9cd070c1a959,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6295570334947069943, guid: 6dfb61f3c2a130a41aef9cd070c1a959,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17161,6 +17641,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: block-grass-low-large (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -17249,6 +17734,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -17519,10 +18009,90 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1831585810283376871, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2543522611181286959, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
         type: 3}
       propertyPath: m_Name
       value: tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543522611181286959, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3825217451190652454, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3876351542192847511, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973987037534944125, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495376562792655542, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601227525713710927, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755802338156863900, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756988197559666755, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805469008603069691, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274365214391302890, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694796836490243793, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6988205411652098677, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8424387592878091543, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576512701931939705, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984507392401428064, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17541,6 +18111,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -17681,6 +18256,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CheckPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 8535655280687019017, guid: e6c1e824f33053b49922be856825df4a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17704,6 +18284,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: platform-overhang (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8884287210815037907, guid: 933ed6dfd8e3ae742af23af8000d727a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8983093112467811508, guid: 933ed6dfd8e3ae742af23af8000d727a,
         type: 3}
@@ -17778,6 +18363,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -18138,6 +18728,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: block-grass-overhang-large-tall (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4675965692597013171, guid: 6dfb61f3c2a130a41aef9cd070c1a959,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6295570334947069943, guid: 6dfb61f3c2a130a41aef9cd070c1a959,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18396,6 +18991,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LazerTrap (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 6654122730075934217, guid: 1962e434f8d68974983459742954a60d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18535,6 +19135,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LazerTrap (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654122730075934217, guid: 1962e434f8d68974983459742954a60d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18745,6 +19350,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 563516974082045343, guid: ed2b130b6c6802f47942003a45f27958,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6694107483094089466, guid: ed2b130b6c6802f47942003a45f27958,
         type: 3}
       propertyPath: damage
@@ -18823,6 +19433,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -18917,6 +19532,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: JumpPad (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691382709855594945, guid: 83ee852d8f6c1fd489ca3051fe696aa3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9155367155405031933, guid: 83ee852d8f6c1fd489ca3051fe696aa3,
         type: 3}
@@ -19230,6 +19850,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: block-grass-low-large
       objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -19318,6 +19943,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: platform-overhang (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8884287210815037907, guid: 933ed6dfd8e3ae742af23af8000d727a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8983093112467811508, guid: 933ed6dfd8e3ae742af23af8000d727a,
         type: 3}
@@ -19464,6 +20094,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: block-grass-corner-low (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7400940923023888910, guid: c78a99e2972ad4646b38af846062ccf7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19492,6 +20127,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: JumpPad
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691382709855594945, guid: 83ee852d8f6c1fd489ca3051fe696aa3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9155367155405031933, guid: 83ee852d8f6c1fd489ca3051fe696aa3,
         type: 3}
@@ -19568,7 +20208,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &1508860021
 Transform:
@@ -19608,6 +20248,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: spike-block-wide (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004854370460467006, guid: fc557bece03380148acf3853a8aa9ac4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8983130925979806501, guid: fc557bece03380148acf3853a8aa9ac4,
         type: 3}
@@ -19719,6 +20364,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: JumpPad (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4691382709855594945, guid: 83ee852d8f6c1fd489ca3051fe696aa3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9155367155405031933, guid: 83ee852d8f6c1fd489ca3051fe696aa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19792,6 +20442,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -20068,6 +20723,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LazerTrap (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6654122730075934217, guid: 1962e434f8d68974983459742954a60d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20091,6 +20751,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: flowers-tall (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218095974199584428, guid: aa6e6a21340db4647bbe1e049bc20a57,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6161392477559543134, guid: aa6e6a21340db4647bbe1e049bc20a57,
         type: 3}
@@ -20165,6 +20830,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: arrow (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856741387808136508, guid: e0df7ec3a1352f0489c02b1378893798,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7138347053951578416, guid: e0df7ec3a1352f0489c02b1378893798,
         type: 3}
@@ -20301,6 +20971,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: flowers-tall (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218095974199584428, guid: aa6e6a21340db4647bbe1e049bc20a57,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6161392477559543134, guid: aa6e6a21340db4647bbe1e049bc20a57,
         type: 3}
@@ -20441,6 +21116,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CheckPoint (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8535655280687019017, guid: e6c1e824f33053b49922be856825df4a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20519,6 +21199,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LazerTrap (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654122730075934217, guid: 1962e434f8d68974983459742954a60d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20631,10 +21316,90 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1831585810283376871, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2543522611181286959, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
         type: 3}
       propertyPath: m_Name
       value: tree (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543522611181286959, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3825217451190652454, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3876351542192847511, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973987037534944125, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495376562792655542, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601227525713710927, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755802338156863900, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756988197559666755, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805469008603069691, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274365214391302890, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694796836490243793, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6988205411652098677, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8424387592878091543, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576512701931939705, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984507392401428064, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20708,6 +21473,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LazerTrap (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654122730075934217, guid: 1962e434f8d68974983459742954a60d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20797,6 +21567,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CheckPoint (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535655280687019017, guid: e6c1e824f33053b49922be856825df4a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20962,6 +21737,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: JumpPad (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4691382709855594945, guid: 83ee852d8f6c1fd489ca3051fe696aa3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9155367155405031933, guid: 83ee852d8f6c1fd489ca3051fe696aa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21035,6 +21815,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -21125,6 +21910,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: block-grass-overhang-large-tall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4675965692597013171, guid: 6dfb61f3c2a130a41aef9cd070c1a959,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6295570334947069943, guid: 6dfb61f3c2a130a41aef9cd070c1a959,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21192,6 +21982,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-overhang-large-tall (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675965692597013171, guid: 6dfb61f3c2a130a41aef9cd070c1a959,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6295570334947069943, guid: 6dfb61f3c2a130a41aef9cd070c1a959,
         type: 3}
@@ -21417,6 +22212,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: block-grass-low-large (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -21505,6 +22305,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ItemSpawner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138697450812616052, guid: a3f6ab7b6dc8f6c4d934e8bca22d8e9f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107158212799422932, guid: a3f6ab7b6dc8f6c4d934e8bca22d8e9f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4972392975714630472, guid: a3f6ab7b6dc8f6c4d934e8bca22d8e9f,
         type: 3}
@@ -21631,10 +22441,90 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1831585810283376871, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2543522611181286959, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
         type: 3}
       propertyPath: m_Name
       value: tree (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543522611181286959, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3825217451190652454, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3876351542192847511, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973987037534944125, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495376562792655542, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601227525713710927, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755802338156863900, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756988197559666755, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805469008603069691, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274365214391302890, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694796836490243793, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6988205411652098677, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8424387592878091543, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576512701931939705, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984507392401428064, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21653,6 +22543,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -21929,10 +22824,90 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1831585810283376871, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2543522611181286959, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
         type: 3}
       propertyPath: m_Name
       value: tree (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543522611181286959, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3825217451190652454, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3876351542192847511, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973987037534944125, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495376562792655542, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601227525713710927, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755802338156863900, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756988197559666755, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805469008603069691, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274365214391302890, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694796836490243793, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6988205411652098677, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8424387592878091543, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576512701931939705, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984507392401428064, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22078,6 +23053,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: spike-block (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7604793741548686470, guid: 0fecfef077fa55844b3fa57905ca3679,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22101,6 +23081,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -22552,10 +23537,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2992618461199471826, guid: f1e1018488da9c2418b8e6a43bfc3128,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7545325163572500328, guid: f1e1018488da9c2418b8e6a43bfc3128,
         type: 3}
       propertyPath: m_Name
       value: flowers (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545325163572500328, guid: f1e1018488da9c2418b8e6a43bfc3128,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8817243107141705367, guid: f1e1018488da9c2418b8e6a43bfc3128,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9120663720597007000, guid: f1e1018488da9c2418b8e6a43bfc3128,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22580,6 +23585,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -22720,6 +23730,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: spike-block (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 7604793741548686470, guid: 0fecfef077fa55844b3fa57905ca3679,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22743,6 +23758,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: spike-block-wide (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004854370460467006, guid: fc557bece03380148acf3853a8aa9ac4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8983130925979806501, guid: fc557bece03380148acf3853a8aa9ac4,
         type: 3}
@@ -22818,6 +23838,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: spike-block-wide (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 4004854370460467006, guid: fc557bece03380148acf3853a8aa9ac4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8983130925979806501, guid: fc557bece03380148acf3853a8aa9ac4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22891,6 +23916,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-overhang-large-tall (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675965692597013171, guid: 6dfb61f3c2a130a41aef9cd070c1a959,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6295570334947069943, guid: 6dfb61f3c2a130a41aef9cd070c1a959,
         type: 3}
@@ -23112,6 +24142,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: spike-block (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7604793741548686470, guid: 0fecfef077fa55844b3fa57905ca3679,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23135,6 +24170,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: platform-overhang (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8884287210815037907, guid: 933ed6dfd8e3ae742af23af8000d727a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8983093112467811508, guid: 933ed6dfd8e3ae742af23af8000d727a,
         type: 3}
@@ -23209,6 +24249,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -23363,6 +24408,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-corner-low (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400940923023888910, guid: c78a99e2972ad4646b38af846062ccf7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23522,6 +24572,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -23689,10 +24744,90 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1831585810283376871, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2543522611181286959, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
         type: 3}
       propertyPath: m_Name
       value: tree (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543522611181286959, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3825217451190652454, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3876351542192847511, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973987037534944125, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495376562792655542, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601227525713710927, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755802338156863900, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756988197559666755, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805469008603069691, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274365214391302890, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694796836490243793, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6988205411652098677, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8424387592878091543, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576512701931939705, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984507392401428064, guid: 768c898c49b0ae34c8ba7c7fcec803e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23711,6 +24846,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: spike-block-wide (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004854370460467006, guid: fc557bece03380148acf3853a8aa9ac4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8983130925979806501, guid: fc557bece03380148acf3853a8aa9ac4,
         type: 3}
@@ -23844,6 +24984,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: block-grass-low-large (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -23938,6 +25083,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-overhang-large-tall (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675965692597013171, guid: 6dfb61f3c2a130a41aef9cd070c1a959,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6295570334947069943, guid: 6dfb61f3c2a130a41aef9cd070c1a959,
         type: 3}
@@ -26032,6 +27182,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: platform-overhang
       objectReference: {fileID: 0}
+    - target: {fileID: 8884287210815037907, guid: 933ed6dfd8e3ae742af23af8000d727a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8983093112467811508, guid: 933ed6dfd8e3ae742af23af8000d727a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26185,10 +27340,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2992618461199471826, guid: f1e1018488da9c2418b8e6a43bfc3128,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7545325163572500328, guid: f1e1018488da9c2418b8e6a43bfc3128,
         type: 3}
       propertyPath: m_Name
       value: flowers
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545325163572500328, guid: f1e1018488da9c2418b8e6a43bfc3128,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8817243107141705367, guid: f1e1018488da9c2418b8e6a43bfc3128,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9120663720597007000, guid: f1e1018488da9c2418b8e6a43bfc3128,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26902,6 +28077,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-low-large
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342408680211004320, guid: 29ecd98d0db1fee409695aac5f34cee8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6846402114064994172, guid: 29ecd98d0db1fee409695aac5f34cee8,
         type: 3}
@@ -28132,6 +29312,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: spike-block
       objectReference: {fileID: 0}
+    - target: {fileID: 7604793741548686470, guid: 0fecfef077fa55844b3fa57905ca3679,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28353,6 +29538,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ItemSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138697450812616052, guid: a3f6ab7b6dc8f6c4d934e8bca22d8e9f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107158212799422932, guid: a3f6ab7b6dc8f6c4d934e8bca22d8e9f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7410848327705790489, guid: a3f6ab7b6dc8f6c4d934e8bca22d8e9f,
         type: 3}
@@ -29435,6 +30630,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 563516974082045343, guid: ed2b130b6c6802f47942003a45f27958,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6694107483094089466, guid: ed2b130b6c6802f47942003a45f27958,
         type: 3}
@@ -31366,6 +32566,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-corner-low
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400940923023888910, guid: c78a99e2972ad4646b38af846062ccf7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -47334,6 +48539,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovingPlatform
       objectReference: {fileID: 0}
+    - target: {fileID: 8425498042316281129, guid: d65f2a4fb97f5594f970f92df1547a8c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8859804479783268190, guid: d65f2a4fb97f5594f970f92df1547a8c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -48402,6 +49612,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: block-grass-overhang-large-tall
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675965692597013171, guid: 6dfb61f3c2a130a41aef9cd070c1a959,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6295570334947069943, guid: 6dfb61f3c2a130a41aef9cd070c1a959,
         type: 3}
@@ -49565,6 +50780,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: spike-block-wide
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004854370460467006, guid: fc557bece03380148acf3853a8aa9ac4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8983130925979806501, guid: fc557bece03380148acf3853a8aa9ac4,
         type: 3}
@@ -52129,6 +53349,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LazerTrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654122730075934217, guid: 1962e434f8d68974983459742954a60d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -55169,6 +56394,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: flowers-tall
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218095974199584428, guid: aa6e6a21340db4647bbe1e049bc20a57,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6161392477559543134, guid: aa6e6a21340db4647bbe1e049bc20a57,
         type: 3}
