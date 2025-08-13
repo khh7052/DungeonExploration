@@ -49,8 +49,8 @@ public class PlayerClimbController : MonoBehaviour
         Ray forwardRay = new(climbCheckPoint.position, climbCheckPoint.forward);
         Ray downRay = new(climbCheckPoint.position + transform.TransformDirection(climbDownCheckOffset), Vector3.down);
 
-        bool isForwardHit = Physics.Raycast(forwardRay, out RaycastHit forwardHit, climbForwardCheckDistance, climbableLayerMask);
-        bool isDownHit = Physics.Raycast(downRay, out RaycastHit downHit, climbDownCheckDistance, climbableLayerMask);
+        bool isForwardHit = Physics.Raycast(forwardRay, out RaycastHit forwardHit, climbForwardCheckDistance, climbableLayerMask, QueryTriggerInteraction.Ignore);
+        bool isDownHit = Physics.Raycast(downRay, out RaycastHit downHit, climbDownCheckDistance, climbableLayerMask, QueryTriggerInteraction.Ignore);
 
         if (isForwardHit && isDownHit)
         {
