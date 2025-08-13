@@ -7135,7 +7135,7 @@ MonoBehaviour:
   dontDestroyOnLoad: 1
   playerController: {fileID: 674898185}
   bgm: {fileID: 11400000, guid: b0e1a12ab68f3024b85b1d11dda80a93, type: 2}
-  respawnPoint: {fileID: 0}
+  respawnPoint: {x: 0, y: 1, z: 0}
   respawnHeight: -10
 --- !u!4 &1130053941
 Transform:
@@ -9279,6 +9279,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: b2a2ffea-74b8-4748-821f-32153f92a1af
     m_ActionName: Player/Zoom[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1940484071}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: OnRestart
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7ab9d792-d73f-4afd-b5b9-46a4ed9a3f03
+    m_ActionName: Player/Restart[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -12223,6 +12239,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1508860021}
     m_Modifications:
+    - target: {fileID: 3437016419376525637, guid: e6c1e824f33053b49922be856825df4a,
+        type: 3}
+      propertyPath: spawnOffset.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6261148300593465296, guid: e6c1e824f33053b49922be856825df4a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -41924,15 +41945,15 @@ SceneRoots:
   - {fileID: 674898186}
   - {fileID: 330585546}
   - {fileID: 113258667}
-  - {fileID: 1940484072}
-  - {fileID: 1933232077}
   - {fileID: 1508860021}
   - {fileID: 1174054117}
   - {fileID: 1394461262}
-  - {fileID: 1130053941}
   - {fileID: 1392999184}
   - {fileID: 1339387458}
   - {fileID: 1375465837}
   - {fileID: 4453299473947457951}
   - {fileID: 980488561}
   - {fileID: 4863633131643107514}
+  - {fileID: 1940484072}
+  - {fileID: 1933232077}
+  - {fileID: 1130053941}

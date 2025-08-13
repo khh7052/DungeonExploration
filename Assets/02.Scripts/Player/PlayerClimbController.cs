@@ -80,7 +80,7 @@ public class PlayerClimbController : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        
+
         if (climbCheckPoint != null)
         {
             Gizmos.color = Color.blue;
@@ -90,6 +90,6 @@ public class PlayerClimbController : MonoBehaviour
             Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(climbPoint, 0.5f); // 클라이밍 체크 구체 그리기
         }
-        
+
     }
 }

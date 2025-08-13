@@ -20,6 +20,7 @@ public class InputManager : Singleton<InputManager>
     public event Action DropAction;
     public event Action UseAction;
     public event Action OptionAction;
+    public event Action RestartAction;
 
     public bool IsMoving => MoveInput.sqrMagnitude > 0.01f;
 
@@ -110,6 +111,12 @@ public class InputManager : Singleton<InputManager>
             ZoomInput = callback.ReadValue<Vector2>().y / 120f;
         else if (callback.canceled)
             ZoomInput = 0f;
+    }
+
+    public void OnRestart(InputAction.CallbackContext callback)
+    {
+        if (callback.started)
+            RestartAction?.Invoke();
     }
 
 }

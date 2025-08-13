@@ -3,6 +3,9 @@ using Constants;
 
 public class PlayerController : MonoBehaviour
 {
+    private Rigidbody rigd;
+    public Rigidbody RigidBody { get => rigd; }
+
     [Header("Stats")]
     [SerializeField] private Stat[] initStats;
     public CharacterStats characterStats;
@@ -23,6 +26,9 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        rigd = GetComponent<Rigidbody>();
+
+
         inventoryController = GetComponent<PlayerInventoryController>();
         climbController = GetComponent<PlayerClimbController>();
         movementController = GetComponent<PlayerMovementController>();

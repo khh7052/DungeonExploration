@@ -67,7 +67,7 @@ public class PlayerMovementController : MonoBehaviour
 
     private void Update()
     {
-        if(playerController.ClimbController.IsClimbing) return;
+        if (playerController.ClimbController.IsClimbing) return;
         isGrounded = IsGrounded();
 
         ProcessInput();
@@ -78,7 +78,7 @@ public class PlayerMovementController : MonoBehaviour
         DecayExternalVelocity();
         UpdateAnimationStates();
 
-        Debug.Log($"Velocity {rigd.velocity}, External Velocity: {externalVelocity}");
+        // Debug.Log($"Velocity {rigd.velocity}, External Velocity: {externalVelocity}");
     }
 
     private void ProcessInput()
@@ -172,7 +172,7 @@ public class PlayerMovementController : MonoBehaviour
     public void SpawnFootstepEffect()
     {
         if (!isGrounded || footstepEffect == null) return;
-        if(moveDirection == Vector3.zero) return;
+        if (moveDirection == Vector3.zero) return;
 
         AudioManager.Instance.PlaySFX(footstepSFX);
         ObjectPoolingManager.Instance.Get(footstepEffect, groundCheckPoint.position);
