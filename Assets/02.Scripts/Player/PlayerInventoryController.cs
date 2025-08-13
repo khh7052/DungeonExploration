@@ -4,6 +4,7 @@ public class PlayerInventoryController : MonoBehaviour
 {
     [SerializeField] private Inventory inventory;
     [SerializeField] private Transform dropTransform;
+    [SerializeField] private SoundData itemUseSFX;
 
     private InputManager input;
     private PlayerController playerController;
@@ -24,6 +25,7 @@ public class PlayerInventoryController : MonoBehaviour
         if (inventory.AddItem(itemData))
         {
             Debug.Log($"Added item: {itemData.itemName}");
+            AudioManager.Instance.PlaySFX(itemUseSFX);
             return true;
         }
         return false;
@@ -39,11 +41,13 @@ public class PlayerInventoryController : MonoBehaviour
     {
         if (inventory == null) return;
         inventory.Drop(dropTransform.position);
+        AudioManager.Instance.PlaySFX(itemUseSFX);
     }
 
     private void Use()
     {
         if (inventory == null) return;
         inventory.Use(playerController.characterStats);
+        AudioManager.Instance.PlaySFX(itemUseSFX);
     }
 }

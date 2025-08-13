@@ -6813,6 +6813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 1134591954}
   dropTransform: {fileID: 965327053}
+  itemUseSFX: {fileID: 11400000, guid: c5436a72e5f03a547b17dce923e0e03f, type: 2}
 --- !u!114 &674898189
 MonoBehaviour:
   m_ObjectHideFlags: 0
