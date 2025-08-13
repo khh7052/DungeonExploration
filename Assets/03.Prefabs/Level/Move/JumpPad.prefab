@@ -141,6 +141,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpDirection: {x: 0, y: 1, z: 0}
-  jumpForce: 10
+  jumpForce: 20
   forceMode: 2
   bounceSFX: {fileID: 11400000, guid: 9a072ce268b27074fb00932cba6cd2fa, type: 2}
