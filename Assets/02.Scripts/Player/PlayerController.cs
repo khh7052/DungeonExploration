@@ -1,7 +1,7 @@
 using UnityEngine;
 using Constants;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamageable
 {
     private Rigidbody rigd;
     public Rigidbody RigidBody { get => rigd; }
@@ -43,5 +43,15 @@ public class PlayerController : MonoBehaviour
         characterStats = new();
         foreach (var stat in initStats)
             characterStats.AddStat(new(stat.Type, stat.BaseValue));
+    }
+
+    public void TakeDamage(float damage)
+    {
+        characterStats.GetStat(StatType.CurrentHP).SetBaseValue(Health - damage);
+        if (Health <= 0)
+        {
+            characterStats.GetStat(StatType.CurrentHP).SetBaseValue(5);
+            GameManager.Instance.Respawn();
+        }
     }
 }

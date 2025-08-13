@@ -36,7 +36,7 @@ public class GameManager : Singleton<GameManager>
             AudioManager.Instance.PlaySFX(saveSFX);
     }
 
-    void Respawn()
+    public void Respawn()
     {
         if (playerController == null || respawnPoint == null) return;
         playerController.RigidBody.MovePosition(respawnPoint);
