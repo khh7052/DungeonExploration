@@ -69,7 +69,6 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (playerController.ClimbController.IsClimbing) return;
         isGrounded = IsGrounded();
-
         ProcessInput();
 
         if (isDashing)

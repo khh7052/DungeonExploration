@@ -28,6 +28,8 @@ public class PlayerClimbController : MonoBehaviour
 
     private void Update()
     {
+        rigd.isKinematic = IsClimbing;
+
         if (!isClimbing)
         {
             if (input.IsMoving)
@@ -66,8 +68,6 @@ public class PlayerClimbController : MonoBehaviour
 
     private void ClimbUp()
     {
-        if (!isClimbing) return;
-
         animHandler.Climb(false);
     }
 
@@ -75,7 +75,8 @@ public class PlayerClimbController : MonoBehaviour
     {
         isClimbing = false;
         rigd.isKinematic = false;
-        transform.position = climbPoint;
+        rigd.MovePosition(climbPoint); // 클라이밍이 끝나면 플레이어를 클라이밍 포인트로 이동
+        // transform.position = climbPoint;
     }
 
     private void OnDrawGizmosSelected()
