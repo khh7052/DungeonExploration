@@ -6,6 +6,10 @@ public class PlayerController : MonoBehaviour, IDamageable
     private Rigidbody rigd;
     public Rigidbody RigidBody { get => rigd; }
 
+    [Header("Hit")]
+    [SerializeField] private GameObject damageEffect;
+    [SerializeField] private SoundData damageSFX;
+
     [Header("Stats")]
     [SerializeField] private Stat[] initStats;
     public CharacterStats characterStats;
@@ -52,6 +56,9 @@ public class PlayerController : MonoBehaviour, IDamageable
     public void TakeDamage(float damage)
     {
         characterStats.GetStat(StatType.CurrentHP).SetBaseValue(Health - damage);
+        ObjectPoolingManager.Instance.Get(damageEffect, transform.position, Quaternion.identity);
+        AudioManager.Instance.PlaySFX(damageSFX);
+
         if (Health <= 0)
         {
             GameManager.Instance.Respawn();
