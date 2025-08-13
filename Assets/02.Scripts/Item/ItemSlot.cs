@@ -49,7 +49,9 @@ public class ItemSlot : MonoBehaviour
     {
         if (itemData != null)
         {
-            Instantiate(itemData.itemPrefab, dropPosition, Quaternion.identity);
+            GameObject go = ObjectPoolingManager.Instance.Get(itemData.itemPrefab, dropPosition, Quaternion.identity);
+            ItemObject itemObject = go.GetComponent<ItemObject>();
+            itemObject.ItemData = itemData;
             ItemData = null;
         }
     }

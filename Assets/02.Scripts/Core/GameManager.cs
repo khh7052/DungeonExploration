@@ -12,6 +12,8 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private GameObject saveEffect;
     [SerializeField] private SoundData saveSFX;
 
+    public PlayerController PlayerController { get => playerController; }
+
     private void Start()
     {
         AudioManager.Instance.PlayBGM(bgm);

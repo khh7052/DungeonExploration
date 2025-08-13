@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54fc6ce144104f648b62a73b998148ab, type: 3}
+  m_Name: DashItemData_Use
+  m_EditorClassIdentifier: 
+  itemName: "\uAC80\uC740\uC0C9 \uBB3C"
+  itemDescription: "\uC7A0\uC2DC\uB3D9\uC548 \uB300\uC26C\uAC00 \uAC15\uD654\uB41C\uB2E4."
+  itemIcon: {fileID: -2217656884674354197, guid: 215687feeab0b7445b4a1cd86c82c2e1,
+    type: 3}
+  itemPrefab: {fileID: 1131939199183868711, guid: b98e01ae7fb29f543b8efdce81f48a4e,
+    type: 3}
+  isEquippable: 0
+  statModifiers:
+  - {fileID: 11400000, guid: 421fb2e59baea6e4285c858b7af40597, type: 2}

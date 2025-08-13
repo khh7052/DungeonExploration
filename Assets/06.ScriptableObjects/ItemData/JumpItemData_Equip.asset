@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54fc6ce144104f648b62a73b998148ab, type: 3}
+  m_Name: JumpItemData_Equip
+  m_EditorClassIdentifier: 
+  itemName: "\uAC00\uBCBC\uC6B4 \uAE43\uD138"
+  itemDescription: "\uBAB8\uC774 \uAE43\uD138\uB9CC\uD07C \uAC00\uBCBC\uC6CC\uC9C4\uB2E4.\n\uC7A5\uCC29/\uD574\uC81C
+    C"
+  itemIcon: {fileID: 8757602080057577540, guid: 215687feeab0b7445b4a1cd86c82c2e1,
+    type: 3}
+  itemPrefab: {fileID: 1131939199183868711, guid: b98e01ae7fb29f543b8efdce81f48a4e,
+    type: 3}
+  isEquippable: 1
+  statModifiers:
+  - {fileID: 11400000, guid: 47a0c9ed072658049af895cc73b96482, type: 2}

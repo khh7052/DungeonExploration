@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54fc6ce144104f648b62a73b998148ab, type: 3}
+  m_Name: MoveSpeedItemData_Equip
+  m_EditorClassIdentifier: 
+  itemName: "\uBBFC\uCCA9\uD568\uC758 \uB9DD\uD1A0"
+  itemDescription: "\uB204\uAD70\uAC00 \uBC00\uC5B4\uC8FC\uB294 \uAC83\uCC98\uB7FC
+    \uBE68\uB77C\uC9C4\uB2E4.\n\uC7A5\uCC29/\uD574\uC81C C"
+  itemIcon: {fileID: 8287165777748813492, guid: 215687feeab0b7445b4a1cd86c82c2e1,
+    type: 3}
+  itemPrefab: {fileID: 0}
+  isEquippable: 1
+  statModifiers:
+  - {fileID: 11400000, guid: 341ec1c3cb7754d459a46a34b346029d, type: 2}

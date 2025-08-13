@@ -31,5 +31,5 @@ public class ItemObject : MonoBehaviour, IInteractable
             gameObject.SetActive(false);
     }
 
-    public string GetPrompt() => $"Å‰µæÇÏ±â E";
+    public string GetPrompt() => $"ÁÝ±â E";
 }

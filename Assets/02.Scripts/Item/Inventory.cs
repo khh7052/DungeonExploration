@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 public class Inventory : MonoBehaviour
 {
@@ -41,6 +42,7 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         uiManager = UIManager.Instance;
+
     }
 
     public bool AddItem(ItemData itemData)
@@ -78,6 +80,9 @@ public class Inventory : MonoBehaviour
 
     public void Drop(Vector3 dropPosition)
     {
+        if (SelectedItemSlot.IsEquipped)
+            Use(GameManager.Instance.PlayerController.characterStats);
+
         SelectedItemSlot?.Drop(dropPosition); // 선택된 슬롯에서 아이템 드롭
         UpdateDescription();
     }
